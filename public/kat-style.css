@@ -1,0 +1,214 @@
+
+
+#content{
+    background-color:#1a1a1a;
+}
+
+#primary-menu ul li > a {
+    
+    font-family: 'Finger Paint', cursive;
+
+}
+
+h3{
+    font-size:44px;
+}
+
+.parallax span{
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.présentation_kat{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: 0px 0px 5px rgb(255, 255, 255);
+}
+
+.entry-image img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 974px) {
+    #page-title.page-title-parallax{
+        display:none;
+    }
+
+    #page-title-mobile.page-title-parallax-mobile{
+        width:100%;
+        height:683px;
+    }
+
+    #page-title-mobile.page-title-parallax-mobile h1 {
+        font-size: 40px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: rgba(255,255,255,0.9) !important;
+    }
+
+    #page-title-mobile.page-title-parallax-mobile.page-title-right {
+        text-align: right;
+    }
+
+    #page-title-mobile.page-title-parallax-mobile span {
+        font-size: 22px;
+    }
+    #page-title-mobile.page-title-dark span {
+        color: rgba(255,255,255,0.7);
+    }
+    #page-title-mobile span {
+        display: block;
+        margin-top: 10px;
+        font-weight: 300;
+        color: #777;
+        font-size: 18px;
+    }
+    .parallax{
+        display: none;
+    }
+
+    .parallax-mobile{
+        width: 100%;
+        height:683px;
+    }
+
+}
+
+@media screen and (min-width: 975px) {
+
+    #page-title{
+        height:683px;
+    }
+
+    #header.transparent-header + #page-title.page-title-parallax{
+        background-color:black;
+        width:100%;
+    }
+
+    #page-title-mobile.page-title-parallax-mobile{
+        display:none;
+    }
+
+    .mega-menu-content{
+        display:none;
+    }
+
+    .parallax-mobile{
+        display: none;
+    }
+
+    .parallax{
+        width: 100%;
+        height:683px;
+    }
+
+}
+.bd-accueil{
+    /* The image used */
+    background-image: url("images_kat/kat_background.jpg");
+        /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media screen and (max-width: 974px) {
+    .bd-accueil {
+        padding: 250px 0;
+        background-image: url('images_kat/kat_background.jpg');
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+
+.img-bd-music{
+    /* The image used */
+    background-image: url("images_kat/bd-guitare2.jpg");
+
+    /* Set a specific height */
+    height: 450px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.img-bd-news{
+    /* The image used */
+    background-image: url("images_kat/bd-news.jpg");
+
+    /* Set a specific height */
+    height: 450px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.img-bd-video{
+    /* The image used */
+    background-image: url("images_kat/bd-video.jpg");
+
+    /* Set a specific height */
+    height: 450px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.titre-bd {
+    margin-top: 5em;
+}
+
+@media screen and (min-width: 975px) {
+    #page-blog h1 {
+        justify-content: center;
+        padding-top: 0.5em;
+        margin: 0;
+        /* line-height: 1; */
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: #333;
+        font-size: 150px;
+        text-transform: uppercase;
+    }
+}
+@media screen and (max-width: 974px) {
+    #page-blog h1 {
+        justify-content: center;
+        padding-top: 1.2em;
+        margin: 0;
+        /* line-height: 1; */
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: #333;
+        font-size: 50px;
+        text-transform: uppercase;
+    }
+}
+
+.card-img-top.image-menu{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+

@@ -1,0 +1,137 @@
+{% extends ('base.html.twig') %}
+    {% block body %}
+
+        <!-- Page Title
+        ============================================= -->
+        <section id="page-blog" class="img-bd-live">
+
+            <div class="container clearfix">
+                <h1 class="center text-white titre-bd">Live Agenda</h1>
+            </div>
+
+        </section><!-- #page-title end -->
+
+        <!-- Content
+        ============================================= -->
+        <section id="content">
+
+            <div class="content-wrap">
+
+                <div class="container clearfix">
+
+                    <div id="posts" class="events small-thumbs">
+                        <div class="postcontent nobottommargin clearfix">
+
+
+                            {% for event in events %}
+
+                                <div class="entry clearfix">
+                                    <div class="entry-image">
+                                        <a href="#">
+                                            <img src="images/events/thumbs/1.jpg"
+                                                 alt="Inventore voluptates velit totam ipsa tenetur">
+                                            <div class="entry-date">{{ event.date|date("d") }}
+                                                <span>{{ event.date|date("M") }} </span></div>
+                                        </a>
+                                    </div>
+                                    <div class="entry-c">
+                                        <div class="entry-title">
+                                            <h2><a href="#">{{ event.titre }}</a></h2>
+                                        </div>
+                                        <ul class="entry-meta clearfix">
+                                            <li><a href="#"><i class="icon-time"></i>{{ event.horaire|date("h:i") }}</a>
+                                            </li>
+                                            <li><a href="#"><i class="icon-map-marker2"></i>{{ event.lieu }}</a></li>
+                                        </ul>
+                                        <div class="entry-content">
+                                            <p>{{ event.presentation }}</p>
+                                            {% if not event.billeterie %}
+                                                <a href="#" class="btn btn-secondary" disabled="disabled">Gratuit</a>
+                                            {% elseif  event.billeterie %}
+                                                <a href="{{ event.billeterie|raw }}"
+                                                   onclick="window.open(this.href); return false;"
+                                                   class="btn btn-primary"
+                                                   disabled="disabled">Billeterie</a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+
+                            {% endfor %}
+
+
+                        </div>
+
+                        <div class="sidebar nobottommargin col_last">
+                            <div class="sidebar-widgets-wrap">
+
+                                <div class="widget clearfix">
+
+                                    <div class="widget clearfix">
+
+                                        <h4>Dernière musique</h4>
+                                        {% for music in musics %}
+                                            {{ music.embed|raw }}
+                                        {% endfor %}
+
+                                    </div>
+                                </div>
+                                <div class="widget clearfix">
+
+                                    <div class="widget clearfix">
+                                        <h4>Dernier articles</h4>
+
+
+                                    <div id="post-list-footer">
+
+                                        {% for article in articles %}
+                                            <div class="spost clearfix">
+                                                <div class="entry-image">
+                                                    <img src="{{ asset("imagesArticles/" ~ article.image) }}"
+                                                         class="petiteImage" alt="...">
+                                                </div>
+                                                <div class="entry-c">
+                                                    <div class="entry-title">
+                                                        <h4><a href="#">{{ article.titre }}</a></h4>
+                                                    </div>
+                                                    <ul class="entry-meta">
+                                                        <li>{{ article.date|date("d/M/Y") }}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                        {% endfor %}
+                                    </div>
+
+                                </div>
+
+                                <div class="widget clearfix">
+
+                                    <h4>Dernière vidéo</h4>
+                                    {% for lastvideo in lastvideos %}
+                                        {{ lastvideo.embed|raw }}
+                                    {% endfor %}
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                        <!-- #content end -->
+                        <!-- Pagination
+                        ============================================= -->
+
+                        <!-- .pager end -->
+
+                    </div>
+
+                </div>
+
+        </section><!-- #content end -->
+
+    {% endblock %}

@@ -1,0 +1,176 @@
+{% extends ('base.html.twig') %}
+
+{% block body %}
+
+    <!-- Page Title
+        ============================================= -->
+    <section id="page-blog" class="img-bd-news">
+
+        <div class="container clearfix">
+            <h1 class="center text-white titre-bd">News</h1>
+        </div>
+
+    </section><!-- #page-title end -->
+
+    <section id="content">
+
+        <div class="content-wrap">
+
+            <div class="container clearfix">
+
+                <!-- Post Content
+                ============================================= -->
+                <div class="postcontent nobottommargin clearfix">
+
+                    <!-- Posts
+                    ============================================= -->
+                    <div id="posts" class="small-thumbs">
+                        {% for article in articles %}
+                            <div class="entry clearfix">
+                                <div class="entry-image">
+                                    <img src="{{ asset("imagesArticles/" ~ article.image) }}" class="card-img-top image-menu" alt="...">
+                                </div>
+                                <div class="entry-c">
+                                    <div class="entry-title">
+                                        <h2><a href="blog-single.html">{{ article.Titre }}{{ article.SousTitre }}</a>
+                                        </h2>
+                                    </div>
+                                    <div class="">
+                                        <h4>{{ article.SousTitre }}</h4>
+                                    </div>
+
+
+                                    <ul class="entry-meta clearfix">
+                                        <li><i class="icon-calendar3"></i>{{ article.date|date("d/M/Y") }}</li>
+                                    </ul>
+                                    <div class="entry-content">
+
+                                        <p>{{ article.Texte|slice(0, 250)|raw }}</p>
+
+
+                                        <a href="{{ path('article', {id: article.id }) }}" class="more-link" >Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            {#							<h2><a href="blog-single-full.html">{{ article.Titre }}</a></h2>#}
+                            {#							{{ article.Titre }}#}
+                            {#							{{ article.SousTitre }}#}
+                            {#							{{ article.Texte|raw }}#}
+                            {#							<img src="{{ asset("imagesArticles/" ~ article.image) }}" class="card-img-top image-menu" alt="...">#}
+                            {#							{{ article.date|date("d/mmmm/Y") }}	#}
+                            {#			#}
+                        {% endfor %}
+
+
+                    </div><!-- #posts end -->
+
+                    <!-- Pagination
+                    ============================================= -->
+
+
+                </div><!-- .postcontent end -->
+
+                <!-- Sidebar
+                ============================================= -->
+                <div class="sidebar nobottommargin col_last clearfix">
+                    <div class="sidebar-widgets-wrap">
+
+
+                        <div class="widget clearfix">
+
+                            <div class="widget clearfix">
+
+                                <h4>Dernière musique</h4>
+                                {% for music in musics %}
+                                    {{ music.embed|raw }}
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                        <div class="widget clearfix">
+                            <h4>Prochain concert</h4>
+                            {% for nextconcert in nextconcerts %}
+                                <div class="spost clearfix">
+                                    <div class="entry-image">
+                                        <img src="{{ asset("imagesArticles/" ~ nextconcert.image) }}"
+                                             class="petiteImage" alt="...">
+                                    </div>
+                                    <div class="entry-c">
+                                        <div class="entry-title">
+                                            <h4><a href="#">{{ nextconcert.titre }}</a></h4>
+                                        </div>
+                                        <div class="entry-title">
+                                            <h4><a href="#"><img src="images/icons/map-icon.png"
+                                                                 style="width: 1em">{{ nextconcert.lieu }}</a></h4>
+                                        </div>
+                                        <ul class="entry-meta">
+                                            <li>{{ nextconcert.date|date("d/M/Y") }}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            {% endfor %}
+                        </div>
+                        <div class="widget clearfix">
+
+                            <h4>Dernière vidéo</h4>
+                            {% for lastvideo in lastvideos %}
+                                {{ lastvideo.embed|raw }}
+                            {% endfor %}
+
+
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+
+
+    </section><!-- #content end -->
+
+    <!-- Footer
+    ============================================= -->
+
+
+
+
+
+    <!-- Content
+    ============================================= -->
+    {#		<section id="content">#}
+
+    {#			<div class="content-wrap">#}
+
+    {#				<div class="container clearfix">#}
+
+    {#					<!-- Posts#}
+    {#					============================================= -->#}
+    {#					<div id="posts">#}
+
+    {#						{% for article in articles %}#}
+    {#							<h2><a href="blog-single-full.html">{{ article.Titre }}</a></h2>#}
+    {#							{{ article.Titre }}#}
+    {#							{{ article.SousTitre }}#}
+    {#							{{ article.Texte|raw }}#}
+    {#							<img src="{{ asset("imagesArticles/" ~ article.image) }}" class="card-img-top image-menu" alt="...">#}
+    {#							{{ article.date|date("d/mmmm/Y") }}	#}
+    {#			#}
+    {#						{% endfor %}#}
+    {#						</div>#}
+
+    {#					  #}
+    {#					<!-- .pager end -->#}
+
+    {#				</div>#}
+
+    {#			</div>#}
+
+    {#		</section><!-- #content end -->#}
+
+{% endblock %}

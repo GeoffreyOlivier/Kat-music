@@ -1,0 +1,81 @@
+easy_admin:
+    site_name: 'Kat'
+    formats:
+        time: 'h:i:s'
+    entities:
+        Article:
+            class: App\Entity\Article
+            list:
+                fields:
+                    - { property: 'Titre'}
+                    - { property: 'SousTitre'}
+                    - { property: 'Texte'}
+                    - { property: 'image', type: 'image', base_path: 'imagesArticles' }
+                    - { property: 'Date', type: 'date' }
+            form:
+                fields:
+                    - { property: 'Titre'}
+                    - { property: 'SousTitre'}
+                    - { property: 'Texte', type: 'fos_ckeditor'}
+                    - { property: 'imageFile', type: 'file', base_path: 'imagesArticles' }
+        Music:
+            class: App\Entity\Music
+            list:
+                fields:
+                    - { property: 'Titre'}
+            form:
+                fields:
+                    - { property: 'Titre'}
+                    - { property: 'Embed'}
+
+        Video:
+            class: App\Entity\Video
+            list:
+                fields:
+                    - { property: 'Titre'}
+            form:
+                fields:
+                    - { property: 'Titre'}
+                    - { property: 'Embed'}
+        Envent:
+            class: App\Entity\Event
+            list:
+                fields:
+                    - { property: 'Date', type: 'date'}
+                    - { property: 'Horaire' }
+                    - { property: 'Lieu'}
+                    - { property: 'Titre' }
+                    - { property: 'Presentation' }
+                    - { property: 'Billeterie',  }
+                    - { property: 'image', type: 'image', base_path: 'imagesArticles' }
+            form:
+                fields:
+                    - { property: 'Date', type: 'date'}
+                    - { property: 'Horaire', type: 'time' }
+                    - { property: 'Lieu'}
+                    - { property: 'Titre' }
+                    - { property: 'Presentation' }
+                    - { property: 'Billeterie', label: 'Liens de la billeterie'}
+                    - { property: 'imageFile', type: 'file', base_path: 'imagesArticles' }
+        Commentaire:
+            class: App\Entity\Commentaire
+            list:
+                fields:
+                    - { property: 'pseudo'}
+                    - { property: 'DateTime' }
+                    - { property: 'Commentaire' }
+                    - { property: 'Valide' }
+                    - { property: 'Email' }
+            form:
+                fields:
+                    - { property: 'pseudo'}
+                    - { property: 'DateTime' }
+                    - { property: 'Commentaire',  type: 'fos_ckeditor' }
+                    - { property: 'Valide' }
+                    - { property: 'Email' }
+
+    design:
+        form_theme:
+            - '@EasyAdmin/form/bootstrap_4.html.twig'
+            - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+

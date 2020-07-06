@@ -1,0 +1,282 @@
+{% extends ('base.html.twig') %}
+    {% block body %}
+        <!-- Page Title
+        ============================================= -->
+        <section id="page-title" class="page-title-parallax  page-title-dark page-title-right  bd-accueil"
+                 data-bottom-top="background-position:0px 750px;"
+                 data-top-bottom="background-position:0px -500px;">
+            <div class="container clearfix">
+                <h1>Greg Vignali</h1>
+                <span>Musicien</span>
+            </div>
+        </section><!-- #page-title end -->
+        <!-- Page Title Mobile
+        ============================================= -->
+        <section id="page-title-mobile" class="page-title-parallax-mobile page-title-dark page-title-right bd-accueil">
+            <div class="container clearfix">
+                <h1>Greg Vignali</h1>
+                <span>Musicien</span>
+            </div>
+        </section><!-- #page-title end -->
+        <!-- Content
+        ============================================= -->
+        <section id="content">
+            <div class="content-wrap">
+              
+                <div class="container présentation_kat clearfix">
+                    <div class="row clearfix">
+                        <div class="col-lg-12">
+                            <h3>Qui est Kat ?</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa repellendus adipisci
+                                laborum
+                                placeat delectus labore cupiditate deserunt minus numquam consequatur esse, hic at earum
+                                illo
+                                animi eaque et, dolorem quo qui eos? Quam rerum possimus maxime veniam aut ratione
+                                eveniet
+                                aliquid cumque aspernatur ipsum libero quaerat, nam. Ad, sunt, error!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Page Title
+                ============================================= -->
+                <div class="section parallax dark bottommargin-lg"
+                     style="background-image: url('images_kat/kat_background2.jpg'); background-size: cover; padding: 100px 0;"
+                     data-bottom-top="background-position:0px 0px;" data-top-bottom="background-position:0px -500px;">
+                    <div class="container clearfix">
+                        <h1>Yann Bertho</h1>
+                        <span>Musicien</span>
+                    </div>
+                </div>
+                <!-- Page Title Mobile
+                ============================================= -->
+                <div class="section parallax-mobile dark bottommargin-lg"
+                     style="background-image: url('images_kat/kat_background2.jpg'); background-size: cover; padding: 100px 0;"
+                     data-bottom-top="background-position:800px 0px;"
+                     data-top-bottom="background-position:800px -250px;">
+                    <div class="container clearfix">
+                        <div class="col_one_fourth nobottommargin center" data-animate="swing" data-delay="200">
+                            <h1>Yann Bertho</h1>
+                            <span>Musicien</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="fslider testimonial testimonial-full bottommargin" data-animation="fade"
+                     data-arrows="false">
+                    <div class="flexslider">
+                        <div class="slider-wrap">
+                            <div class="slide">
+                                <div class="testi-image">
+                                    <a href="#"><img src="images/testimonials/3.jpg" alt="Customer Testimonails"></a>
+                                </div>
+                                <div class="testi-content">
+                                    <p>Similique fugit repellendus expedita excepturi iure perferendis provident quia
+                                        eaque. Repellendus, vero numquam?</p>
+                                    <div class="testi-meta">
+                                        Steve Jobs
+                                        <span>Apple Inc.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="testi-image">
+                                    <a href="#"><img src="images/testimonials/2.jpg" alt="Customer Testimonails"></a>
+                                </div>
+                                <div class="testi-content">
+                                    <p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos
+                                        obcaecati id culpa corporis molestias.</p>
+                                    <div class="testi-meta">
+                                        Collis Ta'eed
+                                        <span>Envato Inc.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="testi-image">
+                                    <a href="#"><img src="images/testimonials/1.jpg" alt="Customer Testimonails"></a>
+                                </div>
+                                <div class="testi-content">
+                                    <p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam
+                                        cum libero illo rerum!</p>
+                                    <div class="testi-meta">
+                                        John Doe
+                                        <span>XYZ Inc.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container clearfix">
+
+                    <!-- Post Content
+                    ============================================= -->
+
+                    <!-- Posts
+                    ============================================= -->
+                    <div id="posts" class="small-thumbs alt">
+
+                        <div class="entry clearfix">
+                            <div class="entry-image">
+                                <a href="images/blog/full/17.jpg" data-lightbox="image">
+                                    <img class="image_fade"
+                                         src="images/blog/small/17.jpg"
+                                         alt="Standard Post with Image">
+                                </a>
+                            </div>
+                            {% for article in articles %}
+                                <div class="entry-c">
+                                    <div class="entry-title">
+                                        <h1>Dernière News - {{ article.Titre }}</h1>
+                                    </div>
+                                    <ul class="entry-meta clearfix">
+                                        <li><i class="icon-calendar3"></i> {{ article.date|date("d/M/Y") }}</li>
+                                    </ul>
+                                    <div class="entry-content">
+                                        <p>{{ article.Texte|slice(0, 250)|raw }}</p>
+                                        <a href="blog-single.html" class="more-link">Read More</a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    </div><!-- #posts end -->
+
+
+                </div>
+
+                <div class="container clearfix">
+
+                    <!-- Post Content
+                    ============================================= -->
+
+                    {% for music in musics %}
+							<h3>Dernière MusiK - {{music.titre}}</h3>
+
+							{{ music.embed|raw }}
+
+
+							<div class="divider"><i class="icon-circle"></i></div>
+						{% endfor %}
+
+                  
+                </div><!-- .postcontent end -->
+
+
+                <div class="container clearfix">
+
+                    <!-- Post Content
+                    ============================================= -->
+
+
+                    {% for video in videos %}
+                        <h3>Dernière VidéoK - {{video.titre}}</h3>
+
+                        {{ video.embed|raw }}
+
+                    {% endfor %}
+
+                </div><!-- .postcontent end -->
+
+
+                <div class="container clearfix">
+
+                    <div class="divider"><i class="icon-circle"></i></div>
+
+                </div>
+
+                <div id="portfolio"
+                     class="portfolio portfolio-5 portfolio-nomargin portfolio-full portfolio-notitle clearfix"
+                     style="margin-bottom: -80px !important;">
+                    <article class="portfolio-item pf-media pf-icons">
+                        <div class="portfolio-image">
+                            <a href="portfolio-single.html">
+                                <img src="images_kat/Greg_sol_dièse_crop_resize.jpg" alt="Greg_G#">
+                            </a>
+                            <div class="portfolio-overlay">
+                                <a href="images_kat/Greg_sol_dièse.jpg" class="left-icon" data-lightbox="image"><i
+                                            class="icon-line-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-desc">
+                            <h3><a href="portfolio-single.html">Open Imagination</a></h3>
+                            <span><a href="#">Media</a>, <a href="#">Icons</a></span>
+                        </div>
+                    </article>
+                    <article class="portfolio-item pf-illustrations">
+                        <div class="portfolio-image">
+                            <a href="portfolio-single.html">
+                                <img src="images_kat/Kat_Bass_crop_resize.jpg" alt="Locked Steel Gate">
+                            </a>
+                            <div class="portfolio-overlay">
+                                <a href="images_kat/Kat_Bass.jpg" class="left-icon" data-lightbox="image"><i
+                                            class="icon-line-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-desc">
+                            <h3><a href="portfolio-single.html">Locked Steel Gate</a></h3>
+                            <span><a href="#">Illustrations</a></span>
+                        </div>
+                    </article>
+                    <article class="portfolio-item pf-graphics pf-uielements">
+                        <div class="portfolio-image">
+                            <a href="#">
+                                <img src="images_kat/Kat_guitare_et_violoncelle_crop_resize.jpg" alt="Mac Sunglasses">
+                            </a>
+                            <div class="portfolio-overlay">
+                                <a href="images_kat/Kat_guitare_et_violoncelle.jpg" class="left-icon"
+                                   data-lightbox="image"><i
+                                            class="icon-line-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-desc">
+                            <h3><a href="portfolio-single-video.html">Mac Sunglasses</a></h3>
+                            <span><a href="#">Graphics</a>, <a href="#">UI Elements</a></span>
+                        </div>
+                    </article>
+                    <article class="portfolio-item pf-icons pf-illustrations">
+                        <div class="portfolio-image">
+                            <a href="portfolio-single-gallery.html"><img
+                                        src="images_kat/Kat_White_and_Black_crop_resize.jpg" alt="Morning Dew"></a>
+                            <div class="portfolio-overlay" data-lightbox="gallery">
+                                <a href="images_kat/Kat_White_and_Black_crop.jpg" class="left-icon"
+                                   data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
+                                <a href="images_kat/Kat_White_and_Black.jpg" class="hidden"
+                                   data-lightbox="gallery-item"></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-desc">
+                            <h3><a href="portfolio-single-gallery.html">Morning Dew</a></h3>
+                            <span><a href="#">Icons</a>, <a href="#">Illustrations</a></span>
+                        </div>
+                    </article>
+                    <article class="portfolio-item pf-uielements pf-media">
+                        <div class="portfolio-image">
+                            <a href="portfolio-single.html">
+                                <img src="images_kat/kat_infrarouge_crop_resize.jpg" alt="Console Activity">
+                            </a>
+                            <div class="portfolio-overlay">
+                                <a href="images_kat/kat_infrarouge.jpg" class="left-icon" data-lightbox="image"><i
+                                            class="icon-line-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="portfolio-desc">
+                            <h3><a href="portfolio-single.html">Console Activity</a></h3>
+                            <span><a href="#">UI Elements</a>, <a href="#">Media</a></span>
+                        </div>
+                    </article>
+                </div><!-- #portfolio end -->
+            </div>
+        </section><!-- #content end -->
+        <!-- Content ============================================= -->
+
+
+    {% endblock %}
+
+
+

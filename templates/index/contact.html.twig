@@ -1,0 +1,68 @@
+{% extends ('base.html.twig') %}
+    {% block body %}
+
+
+        <h1>Nous  contacter</h1>
+
+        {{ form(contactForm) }}
+
+
+        <section id="content">
+            {{ form_start(formcom) }}
+            <div class="content-wrap">
+
+                <div class="container clearfix">
+
+
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form class="row" action="include/form.php" method="post" enctype="multipart/form-data">
+                                    <div class="form-process"></div>
+                                    <div class="col-12 form-group">
+                                        <div class="row">
+                                            <div class="col-md-6 form-group">
+                                                <label>Pseudo:</label>
+                                                {{ form_widget (formcom.Pseudo) }}
+                                            </div>
+                                            <div class="col-md-6 form-group">
+                                                <label>Email:</label>
+                                                {{ form_widget (formcom.Email) }}
+                                            </div>
+                                            {# Tu as plusieur manière de faire des formulaires en twig, je te laisse te renseigner#}
+                                            {#  https://symfony.com/doc/4.1/reference/forms/twig_reference.html#}
+                                            {#            <div class="">#}
+                                            {#                {{ form_label(ContactForm.Pseudo) }}#}
+                                            {#            </div>#}
+                                            {#            <div class="fadeIn second">#}
+                                            {#                {{ form_widget(ContactForm.telephone) }}#}
+                                            {#            </div>#}
+                                            {#            <div class="erreur">#}
+                                            {#                {{ form_errors(ContactForm.telephone) }}#}
+                                            {#            </div>#}
+                                            {{ form_widget (formcom.Commentaire) }}
+                                            {#Deux façon de mettre un boutton submit, soit dans le CommentaireType ou ici, a toi de choisir#}
+                                            <button class="btn btn-primary mb-3" type="submit">Valider</button>
+                                            {{ form_end(formcom) }}
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="col-12 form-group">
+                                    {% for comm in commentaires %}
+
+                                        {{ comm.pseudo }}
+                                        {{ comm.DateTime|date("d/m/Y")  }}
+                                        {{ comm.commentaire|raw }}
+
+                                    {% endfor %}
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    {% endblock %}
