@@ -10,6 +10,7 @@ use App\Entity\Video;
 use App\Entity\CommentaireArticle;
 use App\Repository\ArticleRepository;
 use App\Form\CommentaireArticleType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -41,9 +42,23 @@ class NewsController extends AbstractController
     /**
      * @Route("/news/show/{id}", name="article")
      */
-    public function singleArticle(ArticleRepository $repo, $id)
+    public function singleArticle(ArticleRepository $repo, $id, EntityManagerInterface $em, Request $request)
     {
+        $CommentaireArticle = new CommentaireArticle();
+        $commentForm = $this->createForm(CommentaireArticleType::class, $CommentaireArticle);
+        $commentForm -> handleRequest($request);
+        $article = $this->getDoctrine()->getRepository(Article::class)->findOneBy(['id'=>$id]);
 
+        if ($commentForm->isSubmitted() && $commentForm->isValid()){
+            $CommentaireArticle->setArticle($article);
+            $em->persist($CommentaireArticle);
+            $em->flush();
+
+            $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
+
+            // On redirige vers la page de visualisation de l'annonce nouvellement créée
+            return $this->redirectToRoute('article', array('id' => $id));
+        }
 
         $article = $repo->find($id);
         $music = $this->getDoctrine()->getRepository(Music::class)->LastMusic();
@@ -54,52 +69,27 @@ class NewsController extends AbstractController
 
         return $this->render('news/article.html.twig', [
             'article' => $article,
-            'form' => $form->createView(), 
+            'form' => $form->createView(),
             'musics' => $music,
             'lastvideos' => $lastvideo,
-            'nextconcerts' => $nextconcert,          
-            
+            'nextconcerts' => $nextconcert,
+
         ]);
     }
 
-    /**
-    * @Route("/addCommentaireArticle/", name="add_CommentaireArticle")
-    */
-    public function addCommentaireArticle(Request $request)
-    {
-        // On créer un nouveau CommentaireArticle
-        $CommentaireArticle = new CommentaireArticle();
-        // Ici, on préremplit avec la date d'aujourd'hui, par exemple
-        // Cette date sera donc préaffichée dans le formulaire, cela facilite le travail de l'utilisateur
-        $CommentaireArticle->setCreatedAt(new \Datetime());
-        // On crée le FormBuilder grâce au service form factory
-        $form = $this->createForm(CommentaireArticleType::class, $CommentaireArticle);
-        // Si la requête est en POST
-        if ($request->isMethod('POST')) {
-            // On fait le lien Requête <-> Formulaire
-            // À partir de maintenant, la variable $advert contient les valeurs entrées dans le formulaire par le visiteur
-            $form->handleRequest($request);
-
-            // On vérifie que les valeurs entrées sont correctes
-            // (Nous verrons la validation des objets en détail dans le prochain chapitre)
-            if ($form->isValid()) {
-                // On enregistre notre objet $advert dans la base de données, par exemple
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($CommentaireArticle);
-                $em->flush();
-
-                $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
-
-                // On redirige vers la page de visualisation de l'annonce nouvellement créée
-                return $this->redirectToRoute('client', array('id' => $CommentaireArticle->getId()));
-            }
-        }
-        // On passe la méthode createView() du formulaire à la vue
-        // afin qu'elle puisse afficher le formulaire toute seule
-        return $this->render('news/article.html.twig', array(
-            'form' => $form->createView(),
-        ));
-    }
+//    /**
+//    * @Route("/addCommentaireArticle/", name="add_CommentaireArticle")
+//    */
+//    public function addCommentaireArticle(EntityManagerInterface $em, Request $request)
+//    {
+//
+//dd();
+//        // On passe la méthode createView() du formulaire à la vue
+//        // afin qu'elle puisse afficher le formulaire toute seule
+//        return $this->render('news/article.html.twig', array(
+//            'form' => $commentForm->createView(),
+//        ));
+//    }
 
 
 

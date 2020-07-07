@@ -37,7 +37,7 @@ easy_admin:
                 fields:
                     - { property: 'Titre'}
                     - { property: 'Embed'}
-        Envent:
+        LiveAgenda:
             class: App\Entity\Event
             list:
                 fields:

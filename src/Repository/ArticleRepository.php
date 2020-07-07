@@ -57,6 +57,19 @@ class ArticleRepository extends ServiceEntityRepository
              ->getResult();
      }
 
+    /**
+     * @return Article[] Returns an array of Article objects
+     */
+
+    public function ArticleId()
+    {
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.id','DESC')
+            ->getQuery()
+            ->getResult();
+    }
+
+
 
     /*
     public function findOneBySomeField($value): ?Article

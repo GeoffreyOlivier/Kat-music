@@ -47,16 +47,18 @@ class CommentaireArticle
      * @ORM\JoinColumn(nullable=false)
      */
     private $Article;
+
     /**
      * CommentaireArticle constructor.
      * @param $CreatedAt
      * @throws \Exception
      */
+    public function __construct()
+    {
+        $this->CreatedAt =new \DateTime('now');
+        $this->Valide = false;
+    }
 
-    // public function __construct($CreatedAt)
-    // {
-    //     $this->CreatedAt =  new \DateTime('now');
-    // }
 
     public function getId(): ?int
     {

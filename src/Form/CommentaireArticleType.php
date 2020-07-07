@@ -14,8 +14,8 @@ class CommentaireArticleType extends AbstractType
     {
         $builder
             ->add('Pseudo')
-            ->add('Content', CKEditorType::class)
             ->add('Email')
+            ->add('Content', CKEditorType::class)
 
         ;
     }

@@ -5,8 +5,8 @@
 }
 
 #primary-menu ul li > a {
-    
-    font-family: 'Finger Paint', cursive;
+
+    font-family: ' Montserrat Subrayada', 'Finger Paint', cursive;
 
 }
 
@@ -140,7 +140,12 @@ h3{
     background-size: cover;
 }
 
+.img-bd-live{
+    /* The image used */
+    background-image: url("images_kat/bd-live.jpg");
 
+    /* Set a specific height */
+    height: 450px;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
@@ -211,4 +216,39 @@ h3{
     object-fit: cover;
 }
 
+/*#primary-menu ul li > a {*/
+/*    display: block;*/
+/*    line-height: 22px;*/
+/*    padding: 39px 15px;*/
+/*    color: #f99d2a;*/
+/*    !*text-shadow: 0px 0px 2px rgb(255,255,255);*!*/
+/*    font-weight: bold;*/
+/*    font-size: 29px;*/
+/*    letter-spacing: 1px;*/
+/*    text-transform: uppercase;*/
+/*    font-family: 'Raleway', sans-serif;*/
+/*    -webkit-transition: margin .4s ease, padding .4s ease;*/
+/*    -o-transition: margin .4s ease, padding .4s ease;*/
+/*    transition: margin .4s ease, padding .4s ease;*/
+/*}*/
+
+/*.dark #header-wrap:not(.not-dark) #top-search form input {*/
+/*    color: #f99d2a ;*/
+/*    !*text-shadow: 5px 2px 3px #2E3192;*!*/
+/*}*/
+h1 > span:not(.nocolor):not(.badge),
+h2 > span:not(.nocolor):not(.badge),
+h3 > span:not(.nocolor):not(.badge),
+h4 > span:not(.nocolor):not(.badge),
+h5 > span:not(.nocolor):not(.badge),
+h6 > span:not(.nocolor):not(.badge) { color: #eb9c4d; }
+
+a {
+    text-decoration: none !important;
+    color: #eb9c4d;
+}
+
+.entry_liveAgenda{
+    min-height:351.5px;
+}
 
