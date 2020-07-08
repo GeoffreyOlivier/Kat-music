@@ -37,7 +37,7 @@
                                 ============================================= -->
                                 <div class="articleImg">
                                     <img src="{{ asset("imagesArticles/" ~ article.image) }}"
-                                                     alt="Blog Single">
+                                         alt="Blog Single">
                                 </div><!-- .entry-image end -->
 
                                 <!-- Entry Content
@@ -48,32 +48,55 @@
 
                                 </div>
                             </div><!-- .entry end -->
+
+
+                            <div class="divider divider-rounded divider-right"><i class="icon-chat"></i></div>
                             <!-- Comments List
                             ============================================= -->
+                            <h3 id="comments-title"><span>{{ article.commentaireArticles|length }}</span>
+                                Commentaires</h3>
+                            {% for commentaireArticle in article.commentaireArticles %}
                             <ol class="commentlist clearfix">
                                 <li class="comment even thread-even depth-1" id="li-comment-1">
-                                    <h3 id="comments-title"><span>{{ article.commentaireArticles|length }}</span>
-                                        Commentaires</h3>
-                                    {% for commentaireArticle in article.commentaireArticles %}
-                                    <div id="comment-2" class="comment-wrap clearfix">
-                                        <div class="comment-content clearfix">
-                                            <div class="comment-author">{{ commentaireArticle.pseudo }}</div>
-                                            <span><a href="#"
-                                                        title="Permalink to this comment">{{ commentaireArticle.createdAt|format_datetime('full','none',locale='fr') }}</a></span>
+                                    <div id="comment-1" class="comment-wrap clearfix mb-3">
+                                        <div class="comment-meta">
+                                            <div class="comment-author vcard">
+												<span class="comment-avatar clearfix">
+												<img alt="Image"
+                                                     src="https://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60"
+                                                     class="avatar avatar-60 photo avatar-default" height="60"
+                                                     width="60"></span>
+                                            </div>
                                         </div>
-                                        <p>{{ commentaireArticle.content|raw }}</p>
+                                        <div class="comment-content clearfix">
+                                            <div class="comment-author">{{ commentaireArticle.pseudo }}<span>
+                                                    <a title="Permalink to this comment">{{ commentaireArticle.createdAt|date("d/M/Y") }}</a></span>
+                                            </div>
+
+                                            <p>{{ commentaireArticle.content|raw }}</p>
+
+                                            <a class="comment-reply-link" href="#"><i class="icon-reply"></i></a>
+                                        </div>
+                                        <div class="clear  "></div>
                                     </div>
-                                    <div class="clear"></div>
                                 </li>
                                 {% endfor %}
                             </ol><!-- .commentlist end -->
-                            <div class="clear"></div>
+
+                            <div class="divider divider-sm divider-rounded divider-center"><i class="icon-pencil"></i>
+                            </div>
+
                             <!-- Comment Form
                             ============================================= -->
+
+
                             <div id="respond" class="clearfix">
+
                                 <h3>Leave a <span>Comment</span></h3>
+
                                 <form class="clearfix" action="#" method="post" id="commentform">
                                     {{ form_start(form) }}
+
                                     <div class="row">
                                         <div class="col-lg-4">
                                             {{ form_label(form.Pseudo) }}
@@ -129,7 +152,8 @@
                                                 <h4><a href="#">{{ nextconcert.titre }}</a></h4>
                                             </div>
                                             <div class="entry-title">
-                                                <h4><img src="{{ asset("images/icons/map-icon.png") }}" style="width: 1em">{{ nextconcert.lieu }}</h4>
+                                                <h4><img src="{{ asset("images/icons/map-icon.png") }}"
+                                                         style="width: 1em">{{ nextconcert.lieu }}</h4>
                                             </div>
                                             <ul class="entry-meta">
                                                 <li>{{ nextconcert.date|date("d/M/Y") }}</li>
