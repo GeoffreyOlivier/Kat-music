@@ -21,7 +21,6 @@
                 <!-- Post Content
                 ============================================= -->
                 <div class="postcontent nobottommargin clearfix">
-
                     <!-- Posts
                     ============================================= -->
                     <div id="posts" class="small-thumbs">
@@ -32,29 +31,18 @@
                                 </div>
                                 <div class="entry-c">
                                     <div class="entry-title">
-                                        <h2><a href="blog-single.html">{{ article.Titre }}{{ article.SousTitre }}</a>
-                                        </h2>
+                                        <h1><a href="{{ path('article', {id: article.id }) }}">{{ article.Titre }}</a></h1>
+                                        <h2>{{ article.SousTitre }}</h2>
                                     </div>
-                                    <div class="">
-                                        <h4>{{ article.SousTitre }}</h4>
-                                    </div>
-
-
                                     <ul class="entry-meta clearfix">
-                                        <li><i class="icon-calendar3"></i>{{ article.date|date("d/M/Y") }}</li>
+                                        <li><i class="icon-calendar3"></i>{{ article.date|format_datetime('full','none',locale='fr') }}</li>
                                     </ul>
                                     <div class="entry-content">
-
                                         <p>{{ article.Texte|slice(0, 250)|raw }}</p>
-
-
                                         <a href="{{ path('article', {id: article.id }) }}" class="more-link" >Read More</a>
                                     </div>
                                 </div>
                             </div>
-
-
-
                             {#							<h2><a href="blog-single-full.html">{{ article.Titre }}</a></h2>#}
                             {#							{{ article.Titre }}#}
                             {#							{{ article.SousTitre }}#}
@@ -63,31 +51,18 @@
                             {#							{{ article.date|date("d/mmmm/Y") }}	#}
                             {#			#}
                         {% endfor %}
-
-
                     </div><!-- #posts end -->
-
-                    <!-- Pagination
-                    ============================================= -->
-
-
                 </div><!-- .postcontent end -->
-
                 <!-- Sidebar
                 ============================================= -->
                 <div class="sidebar nobottommargin col_last clearfix">
                     <div class="sidebar-widgets-wrap">
-
-
                         <div class="widget clearfix">
-
                             <div class="widget clearfix">
-
                                 <h4>Dernière musique</h4>
                                 {% for music in musics %}
                                     {{ music.embed|raw }}
                                 {% endfor %}
-
                             </div>
                         </div>
                         <div class="widget clearfix">
@@ -107,39 +82,25 @@
                                                                  style="width: 1em">{{ nextconcert.lieu }}</a></h4>
                                         </div>
                                         <ul class="entry-meta">
-                                            <li>{{ nextconcert.date|date("d/M/Y") }}</li>
+                                            <li>{{ nextconcert.date|format_datetime('full','none',locale='fr') }}</li>
                                         </ul>
                                     </div>
                                 </div>
-
                             {% endfor %}
                         </div>
                         <div class="widget clearfix">
-
                             <h4>Dernière vidéo</h4>
                             {% for lastvideo in lastvideos %}
                                 {{ lastvideo.embed|raw }}
                             {% endfor %}
-
-
                         </div>
-
-
-
-
                     </div>
-
                 </div>
-
-
+            </div>
+        </div>
     </section><!-- #content end -->
-
     <!-- Footer
     ============================================= -->
-
-
-
-
 
     <!-- Content
     ============================================= -->

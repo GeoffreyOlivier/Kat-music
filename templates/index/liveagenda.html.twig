@@ -10,28 +10,23 @@
             </div>
 
         </section><!-- #page-title end -->
-
         <!-- Content
         ============================================= -->
         <section id="content">
-
             <div class="content-wrap">
-
                 <div class="container clearfix">
-
                     <div id="posts" class="events small-thumbs">
                         <div class="postcontent nobottommargin clearfix">
-
-
                             {% for event in events %}
-
-                                <div class="entry clearfix">
+                                <div class="entry clearfix cardEvent">
                                     <div class="entry-image">
                                         <a href="#">
-                                            <img src="images/events/thumbs/1.jpg"
-                                                 alt="Inventore voluptates velit totam ipsa tenetur">
+                                            <img src="{{ asset("imagesArticles/" ~ event.image) }}"
+                                                 alt="évenement_kat">
                                             <div class="entry-date">{{ event.date|date("d") }}
-                                                <span>{{ event.date|date("M") }} </span></div>
+                                                <span>{{ event.date|format_datetime(pattern='LLLL',locale='fr') }}</span>
+                                                <span>{{ event.date|format_datetime(pattern='r',locale='fr') }}</span>
+                                            </div>
                                         </a>
                                     </div>
                                     <div class="entry-c">
@@ -56,34 +51,22 @@
                                         </div>
                                     </div>
                                 </div>
-
                             {% endfor %}
-
-
                         </div>
-
                         <div class="sidebar nobottommargin col_last">
                             <div class="sidebar-widgets-wrap">
-
                                 <div class="widget clearfix">
-
                                     <div class="widget clearfix">
-
                                         <h4>Dernière musique</h4>
                                         {% for music in musics %}
                                             {{ music.embed|raw }}
                                         {% endfor %}
-
                                     </div>
                                 </div>
                                 <div class="widget clearfix">
-
                                     <div class="widget clearfix">
                                         <h4>Dernier articles</h4>
-
-
                                     <div id="post-list-footer">
-
                                         {% for article in articles %}
                                             <div class="spost clearfix">
                                                 <div class="entry-image">
@@ -92,46 +75,26 @@
                                                 </div>
                                                 <div class="entry-c">
                                                     <div class="entry-title">
-                                                        <h4><a href="#">{{ article.titre }}</a></h4>
+                                                        <h4><a href="{{ path('article', {id: article.id }) }}">{{ article.titre }}</a></h4>
                                                     </div>
                                                     <ul class="entry-meta">
-                                                        <li>{{ article.date|date("d/M/Y") }}</li>
+                                                        <li>{{ article.date|format_datetime('full','none',locale='fr') }}</li>
                                                     </ul>
                                                 </div>
                                             </div>
-
                                         {% endfor %}
                                     </div>
-
                                 </div>
-
                                 <div class="widget clearfix">
-
                                     <h4>Dernière vidéo</h4>
                                     {% for lastvideo in lastvideos %}
                                         {{ lastvideo.embed|raw }}
                                     {% endfor %}
-
-
                                 </div>
-
-
                             </div>
-
-
                         </div>
-
-
-                        <!-- #content end -->
-                        <!-- Pagination
-                        ============================================= -->
-
-                        <!-- .pager end -->
-
                     </div>
-
                 </div>
-
+            </div>
         </section><!-- #content end -->
-
     {% endblock %}
