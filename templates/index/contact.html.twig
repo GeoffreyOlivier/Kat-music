@@ -2,11 +2,11 @@
     {% block body %}
 
 
-        
+
 
 
         <section id="content">
-            
+
             <div class="content-wrap">
                 <div class="container clearfix">
                     <div class="row">
@@ -54,7 +54,7 @@
 
                                 {{ comm.pseudo }}
                                 {{ comm.DateTime|date("d/m/Y")  }}
-                                {{ comm.commentaire|raw }}
+                                {{ comm.content|raw }}
                             {% endfor %}
                         </div>
                     </div>

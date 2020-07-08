@@ -19,22 +19,19 @@ class CommentaireArticleRepository extends ServiceEntityRepository
         parent::__construct($registry, CommentaireArticle::class);
     }
 
-    // /**
-    //  * @return CommentaireArticle[] Returns an array of CommentaireArticle objects
-    //  */
-    /*
-    public function findByExampleField($value)
+     /**
+      * @return CommentaireArticle[] Returns an array of CommentaireArticle objects
+      */
+
+    public function CountValide()
     {
         return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('c.id', 'ASC')
-            ->setMaxResults(10)
+            ->andWhere('c.valide = :1')
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?CommentaireArticle

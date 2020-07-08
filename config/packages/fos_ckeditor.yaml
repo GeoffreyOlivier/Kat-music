@@ -6,5 +6,6 @@ twig:
 fos_ck_editor:
     configs:
         main_config:
+            config.width: '350px'
             toolbar:
-                - { name: "styles", items: ['Bold', 'Italic', 'Underline', 'Strike', 'Blockquote', '-', 'Link', '-', 'RemoveFormat', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', '-', 'Styles', 'Format','Font','FontSize', '-', 'TextColor', 'BGColor'] }
+                - { name: "styles", items: ['Bold', 'Italic', 'Underline', 'Strike', 'Blockquote', '-', 'Link', '-', 'RemoveFormat', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'TextColor', 'BGColor'] }

@@ -131,6 +131,9 @@
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/google-mailer" />
+      <path value="$PROJECT_DIR$/vendor/twig/intl-extra" />
     </include_path>
   </component>
   <component name="ProjectId" id="1dOrTDyy0ybfymeMGiF7qHcHwfK" />
@@ -148,13 +151,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\kat-musik.com\templates\security" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Kat-music\public\images_kat" />
+      <recent name="C:\xampp\htdocs\Kat-music\public\images_kat\icon_commentaire" />
       <recent name="C:\xampp\htdocs\Kat-music\public\css\fonts" />
       <recent name="C:\xampp\htdocs\kat-musik.com\templates\news" />
       <recent name="C:\xampp\htdocs\kat-musik.com\public\images_kat" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\kat-musik.com\templates\security" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -186,7 +191,8 @@
       <workItem from="1594033237091" duration="1668000" />
       <workItem from="1594114939864" duration="2489000" />
       <workItem from="1594129948966" duration="6626000" />
-      <workItem from="1594145880376" duration="2123000" />
+      <workItem from="1594145880376" duration="4759000" />
+      <workItem from="1594201403182" duration="15211000" />
     </task>
     <servers />
   </component>

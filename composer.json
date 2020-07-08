@@ -17,6 +17,7 @@
         "symfony/form": "5.0.*",
         "symfony/framework-bundle": "5.0.*",
         "symfony/google-mailer": "5.0.*",
+        "symfony/mailer": "5.0.*",
         "symfony/maker-bundle": "^1.19",
         "symfony/orm-pack": "^1.0",
         "symfony/requirements-checker": "^1.1",
