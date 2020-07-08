@@ -37,7 +37,7 @@ class ContactController extends AbstractController
             $contact = $form->getData();
             $message = (new \Swift_Message('Nouveau contact'))
                 ->setFrom($contact['email'])
-                ->setTo('geoff56150@gmail.com')
+                ->setTo('yorikmoreau@gmail.com')
                 ->setBody(
                     $this->renderView(
                         'emails/contact.html.twig', compact('contact')

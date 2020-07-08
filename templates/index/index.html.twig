@@ -111,7 +111,7 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="container clearfix">
 
                     <!-- Post Content
@@ -121,29 +121,29 @@
                     ============================================= -->
                     <div id="posts" class="small-thumbs alt">
 
+                        {% for article in articles %}
                         <div class="entry clearfix">
                             <div class="entry-image">
                                 <a href="images/blog/full/17.jpg" data-lightbox="image">
                                     <img class="image_fade"
-                                         src="images/blog/small/17.jpg"
+                                         src="{{ asset("imagesArticles/" ~ article.image) }}"
                                          alt="Standard Post with Image">
                                 </a>
                             </div>
-                            {% for article in articles %}
-                                <div class="entry-c">
-                                    <div class="entry-title">
-                                        <h1>Dernière News - {{ article.Titre }}</h1>
-                                    </div>
-                                    <ul class="entry-meta clearfix">
-                                        <li><i class="icon-calendar3"></i> {{ article.date|date("d/M/Y") }}</li>
-                                    </ul>
-                                    <div class="entry-content">
-                                        <p>{{ article.Texte|slice(0, 250)|raw }}</p>
-                                        <a href="blog-single.html" class="more-link">Read More</a>
-                                    </div>
+                            <div class="entry-c">
+                                <div class="entry-title">
+                                    <h1>Dernière News - {{ article.Titre }}</h1>
                                 </div>
-                            {% endfor %}
+                                <ul class="entry-meta clearfix">
+                                    <li><i class="icon-calendar3"></i>{{ article.date|format_datetime('full','none',locale='fr') }}</li>
+                                </ul>
+                                <div class="entry-content">
+                                    <p>{{ article.Texte|slice(0, 250)|raw }}</p>
+                                    <a href="blog-single.html" class="more-link">Read More</a>
+                                </div>
+                            </div>
                         </div>
+                        {% endfor %}
 
                     </div><!-- #posts end -->
 
