@@ -252,3 +252,21 @@ a {
     min-height:351.5px;
 }
 
+/*interligne effacer*/
+
+.entry:after {
+    /*content: '';*/
+    /*position: relative;*/
+    height: 0px;
+    margin-top: 0px;
+    /*background-color: #F5F5F5;*/
+}
+
+.commentlist {
+
+    /*list-style: none;*/
+    padding-bottom: 0px;
+    margin: 0 0 00px;
+    border-bottom: 0px solid #EEE;
+}
+

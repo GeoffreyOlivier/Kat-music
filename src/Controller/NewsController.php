@@ -77,21 +77,4 @@ class NewsController extends AbstractController
         ]);
     }
 
-//    /**
-//    * @Route("/addCommentaireArticle/", name="add_CommentaireArticle")
-//    */
-//    public function addCommentaireArticle(EntityManagerInterface $em, Request $request)
-//    {
-//
-//dd();
-//        // On passe la méthode createView() du formulaire à la vue
-//        // afin qu'elle puisse afficher le formulaire toute seule
-//        return $this->render('news/article.html.twig', array(
-//            'form' => $commentForm->createView(),
-//        ));
-//    }
-
-
-
-
 }
