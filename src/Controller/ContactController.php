@@ -27,23 +27,33 @@ class ContactController extends AbstractController
      * @return RedirectResponse|Response
      * @throws Exception
      */
-    public function Contact(Request $request, EntityManagerInterface $em, \Swift_Mailer $mailer)
+    public function Contact(Request $request, EntityManagerInterface $em )
     {
 
 //        envoyer mail
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+
+            require_once '../mailer.php';
+            $transport = (new \Swift_SmtpTransport('smtp.gmail.com',587,'tls'))
+            ->setUsername(EMAIL)
+            ->setPassword(PASS)
+            ;
+
+
+
             $contact = $form->getData();
+            $mailer = new \Swift_Mailer($transport);
             $message = (new \Swift_Message('Nouveau contact'))
-                ->setFrom($contact['email'])
-                ->setTo('yorikmoreau@gmail.com')
-                ->setBody(
-                    $this->renderView(
-                        'emails/contact.html.twig', compact('contact')
-                    ),
-                    'text/html'
-                );
+            ->setFrom($contact['email'])
+            ->setTo('yorikmoreau@gmail.com')
+            ->setBody(
+                $this->render('emails/contact.html.twig', [
+                        'email' => $contact['email'],
+                        'message' => $contact['message'],
+                        'nom' => $contact['nom']
+                ]));
             $mailer->send($message);
             $this->addFlash('success','Le message à bien été envoyé');
             return $this->redirectToRoute('contact');

@@ -59,6 +59,7 @@ easy_admin:
                     - { property: 'imageFile', type: 'file', base_path: 'imagesArticles' }
         Commentaire:
             class: App\Entity\Commentaire
+            disabled_actions: ['new']
             list:
                 fields:
                     - { property: 'pseudo'}
@@ -71,6 +72,23 @@ easy_admin:
                     - { property: 'pseudo'}
                     - { property: 'DateTime' }
                     - { property: 'Commentaire',  type: 'fos_ckeditor' }
+                    - { property: 'Valide' }
+                    - { property: 'Email' }
+        CommentaireArticle:
+            class: App\Entity\CommentaireArticle
+            disabled_actions: ['new']
+            list:
+                fields:
+                    - { property: 'pseudo'}
+                    - { property: 'CreatedAt' }
+                    - { property: 'Content' }
+                    - { property: 'Valide' }
+                    - { property: 'Email' }
+            form:
+                fields:
+                    - { property: 'pseudo'}
+                    - { property: 'CreatedAt' }
+                    - { property: 'Content',  type: 'fos_ckeditor' }
                     - { property: 'Valide' }
                     - { property: 'Email' }
 
