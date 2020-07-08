@@ -1,4 +1,4 @@
-
+/* Body */
 
 #content{
     background-color:#1a1a1a;
@@ -10,7 +10,9 @@
 
 }
 
-h3{
+/* Akkueil */
+
+.présentation_kat h3{
     font-size:44px;
 }
 
@@ -256,3 +258,41 @@ a {
     min-height: 346px;
 }
 
+/* News */
+
+.small-thumbs .entry-image img{
+    border-radius: 0;
+    border: solid 1px white;
+    box-shadow: 1px 1px 3px #eb9c4d;
+}
+
+.entry-title h1{
+    margin-bottom: 0px;
+    color: #eb9c4d;
+}
+
+/* Article */
+
+.articleImg{
+    border-radius: 0;
+    border: solid 1px white;
+    box-shadow: 1px 1px 3px #eb9c4d;
+}
+
+.commentlist li {
+    margin: 30px 0 30px 0px;
+}
+
+.comment-content .comment-author{
+    margin:0px;
+}
+
+.commentlist li .comment-content {
+    padding: 0px;
+}
+
+/* LiveAgenda */
+
+.entry-date{
+    height:84px!important;
+}

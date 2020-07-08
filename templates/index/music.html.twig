@@ -22,28 +22,20 @@
 					============================================= -->
 					<div class="postcontent nobottommargin clearfix">
 
-
-
 						{% for music in musics %}
 							<h3>{{music.titre}}</h3>
 
 							{{ music.embed|raw }}
 
-
 							<div class="divider"><i class="icon-circle"></i></div>
 						{% endfor %}
 
-
-
 					</div><!-- .postcontent end -->
-
 					<!-- Sidebar
 					============================================= -->
-
 					<section>
 						<div class="sidebar nobottommargin col_last">
 							<div class="sidebar-widgets-wrap">
-
 								<div class="widget clearfix">
 									<h4>Prochain concert</h4>
 									{% for nextconcert in nextconcerts %}
@@ -53,25 +45,22 @@
 											</div>
 											<div class="entry-c">
 												<div class="entry-title">
-													<h4><a href="#">{{ nextconcert.titre }}</a></h4>
+													<h4><a href="{{ path('liveagenda') }}">{{ nextconcert.titre }}</a></h4>
 												</div>
 												<div class="entry-title">
-													<h4><a href="#"><img src="images/icons/map-icon.png"
+													<h4><a href="{{ path('liveagenda') }}"><img src="images/icons/map-icon.png"
 																		 style="width: 1em">{{ nextconcert.lieu }}</a></h4>
 												</div>
 												<ul class="entry-meta">
-													<li>{{ nextconcert.date|date("d/M/Y") }}</li>
+													<li>{{ nextconcert.date|format_datetime('full','none',locale='fr') }}</li>
 												</ul>
 											</div>
 										</div>
-
 									{% endfor %}
 								</div>
 								<div class="widget clearfix">
-
 									<h4>Dernier articles</h4>
 									<div id="post-list-footer">
-
 										{% for article in articles %}
 											<div class="spost clearfix">
 												<div class="entry-image">
@@ -79,37 +68,26 @@
 												</div>
 												<div class="entry-c">
 													<div class="entry-title">
-														<h4><a href="#">{{ article.titre }}</a></h4>
+														<h4><a href="{{ path('news') }}">{{ article.titre }}</a></h4>
 													</div>
 													<ul class="entry-meta">
-														<li>{{ article.date|date("d/M/Y") }}</li>
+														<li>{{ article.date|format_datetime('full','none',locale='fr') }}</li>
 													</ul>
 												</div>
 											</div>
-
 										{% endfor %}
 									</div>
-
 								</div>
-
 								<div class="widget clearfix">
-
 									<h4>Dernière vidéo</h4>
 									{% for lastvideo in lastvideos %}
 										{{ lastvideo.embed|raw }}
 									{% endfor %}
-
-
 								</div>
 							</div>
-
-
 						</div>
-
-
-
-
-					</section><!-- #content end -->
-
-
-					{% endblock %}
+					</section>
+				</div>
+			</div>
+		</section><!-- #content end -->
+	{% endblock %}
