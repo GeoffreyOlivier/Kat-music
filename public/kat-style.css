@@ -9,6 +9,27 @@
     font-family: ' Montserrat Subrayada', 'Finger Paint', cursive;
 
 }
+p{
+    color: #fff;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0 0 30px 0;
+    font-family: 'Raleway', sans-serif;
+}
+label {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
 
 /* Akkueil */
 
@@ -26,7 +47,7 @@
     color: white;
     font-weight: bold;
     font-size: 20px;
-    text-shadow: 0px 0px 5px rgb(255, 255, 255);
+    /*text-shadow: 0px 0px 5px rgb(255, 255, 255);*/
 }
 
 .entry-image img{
@@ -243,18 +264,73 @@ h2 > span:not(.nocolor):not(.badge),
 h3 > span:not(.nocolor):not(.badge),
 h4 > span:not(.nocolor):not(.badge),
 h5 > span:not(.nocolor):not(.badge),
-h6 > span:not(.nocolor):not(.badge) { color: #eb9c4d; }
+h6 > span:not(.nocolor):not(.badge) { color: #222fbc; }
 
 a {
     text-decoration: none !important;
-    color: #eb9c4d;
+    color: #222fbc;
 }
 
 .entry_liveAgenda{
     min-height:351.5px;
 }
+/* Live Agenda */
+.p-presentation{
+    color: #0b0b0b;
+}
+.cursor_none{
+    cursor: default;
+}
 
-/*interligne effacer*/
+/* News */
+
+.small-thumbs .entry-image img{
+    border-radius: 0;
+    border: solid 1px white;
+    box-shadow: 1px 1px 3px #222fbc;
+}
+
+.entry-title h1{
+    margin-bottom: 0px;
+    color: #222fbc;
+}
+
+/* Article */
+
+/*.articleImg{*/
+/*    border-radius: 0;*/
+/*    border: solid 1px white;*/
+/*    box-shadow: 1px 1px 3px #eb9c4d;*/
+/*}*/
+.img-bd-article{
+    /* The image used */
+    background-image: url("images_kat/bd-article.jpg");
+
+    /* Set a specific height */
+    height: 150px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.comment-content .comment-author {
+    margin-bottom: -10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+.commentlist li {
+    margin: 30px 0 30px 0px;
+    color: #fff;
+}
+
+.comments-title{
+    font-size: 36px;
+}
+
 .cardEvent{
     min-height: 346px;
 }
@@ -273,40 +349,6 @@ a {
     padding-bottom: 0px;
     margin: 0 0 00px;
     border-bottom: 0px solid #EEE;
-}
-
-
-/* News */
-
-.small-thumbs .entry-image img{
-    border-radius: 0;
-    border: solid 1px white;
-    box-shadow: 1px 1px 3px #eb9c4d;
-}
-
-.entry-title h1{
-    margin-bottom: 0px;
-    color: #eb9c4d;
-}
-
-/* Article */
-
-.articleImg{
-    border-radius: 0;
-    border: solid 1px white;
-    box-shadow: 1px 1px 3px #eb9c4d;
-}
-
-.commentlist li {
-    margin: 30px 0 30px 0px;
-}
-
-.comment-content .comment-author{
-    margin:0px;
-}
-
-.commentlist li .comment-content {
-    padding: 0px;
 }
 
 /* LiveAgenda */

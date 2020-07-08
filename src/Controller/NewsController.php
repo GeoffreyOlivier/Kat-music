@@ -51,23 +51,22 @@ class NewsController extends AbstractController
 
         if ($commentForm->isSubmitted() && $commentForm->isValid()){
             $CommentaireArticle->setArticle($article);
+            $this->addFlash('success','Le commentaire à bien été envoyé, il seras traité au plus vite');
             $em->persist($CommentaireArticle);
             $em->flush();
-
-            $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
-
-            // On redirige vers la page de visualisation de l'annonce nouvellement créée
             return $this->redirectToRoute('article', array('id' => $id));
         }
-
         $article = $repo->find($id);
         $music = $this->getDoctrine()->getRepository(Music::class)->LastMusic();
         $lastvideo = $this->getDoctrine()->getRepository(Video::class)->LastVideo();
         $nextconcert = $this->getDoctrine()->getRepository(Event::class)->NextConcert();
+        $repo = $this->getDoctrine()->getRepository(CommentaireArticle::class);
+        $countvalide =$repo->findBy(array('Valide'=>1));
         $CommentaireArticle = new CommentaireArticle();
         $form = $this->createForm(CommentaireArticleType::class, $CommentaireArticle);
 
         return $this->render('news/article.html.twig', [
+            'countvalide' => $countvalide,
             'article' => $article,
             'form' => $form->createView(),
             'musics' => $music,

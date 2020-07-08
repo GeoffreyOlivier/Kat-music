@@ -39,13 +39,13 @@
                                             <li><a href="#"><i class="icon-map-marker2"></i>{{ event.lieu }}</a></li>
                                         </ul>
                                         <div class="entry-content">
-                                            <p>{{ event.presentation }}</p>
+                                            <p class="p-presentation">{{ event.presentation }}</p>
                                             {% if not event.billeterie %}
-                                                <a href="#" class="btn btn-secondary" disabled="disabled">Gratuit</a>
+                                                <a class="button button-3d button-rounded button-leaf cursor_none" disabled="disabled">Gratuit</a>
                                             {% elseif  event.billeterie %}
                                                 <a href="{{ event.billeterie|raw }}"
                                                    onclick="window.open(this.href); return false;"
-                                                   class="btn btn-primary"
+                                                   class="button button-3d button-rounded button-blue"
                                                    disabled="disabled">Billeterie</a>
                                             {% endif %}
                                         </div>
