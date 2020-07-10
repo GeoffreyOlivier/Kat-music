@@ -30,7 +30,7 @@
                                 <!-- Entry Meta
                                 ============================================= -->
                                 <ul class="entry-meta clearfix">
-                                    <li><i class="icon-calendar3"></i> 10th July 2014</li>
+                                    <li><i class="icon-calendar3"></i> {{ article.date|format_datetime('full','none',locale='fr') }}</li>
 
                                 </ul><!-- .entry-meta end -->
 
@@ -118,10 +118,10 @@
                                             {{ form_widget(form.Content) }}
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 mt-3 ">
+                                    <div class="col-lg-4 mt-3 mr-5">
                                         <button name="submit" type="submit" id="submit-button" tabindex="5"
                                                 value="Submit"
-                                                class="button button-3d button-xlarge button-rounded button-blue ">
+                                                class="button button-3d button-xlarge button-rounded button-amber ">
                                             Publier
                                         </button>
                                     </div>
@@ -136,14 +136,14 @@
                         <div class="sidebar-widgets-wrap">
                             <div class="widget clearfix">
                                 <div class="widget clearfix">
-                                    <h4>Dernière musique</h4>
+                                    <h3>Dernière musique</h3>
                                     {% for music in musics %}
                                         {{ music.embed|raw }}
                                     {% endfor %}
                                 </div>
                             </div>
                             <div class="widget clearfix">
-                                <h4>Prochain concert</h4>
+                                <h3>Prochain concert</h3>
                                 {% for nextconcert in nextconcerts %}
                                     <div class="spost clearfix">
                                         <div class="entry-image">
@@ -155,18 +155,18 @@
                                                 <h4><a href="#">{{ nextconcert.titre }}</a></h4>
                                             </div>
                                             <div class="entry-title">
-                                                <h4><img src="{{ asset("images/icons/map-icon.png") }}"
+                                                <h4><img src="{{ asset("images/icons/map-icon-red.png") }}"
                                                          style="width: 1em">{{ nextconcert.lieu }}</h4>
                                             </div>
                                             <ul class="entry-meta">
-                                                <li>{{ nextconcert.date|date("d/M/Y") }}</li>
+                                                <li>{{ nextconcert.date|format_datetime('full','none',locale='fr') }}</li>
                                             </ul>
                                         </div>
                                     </div>
                                 {% endfor %}
                             </div>
                             <div class="widget clearfix">
-                                <h4>Dernière vidéo</h4>
+                                <h3>Dernière vidéo</h3>
                                 {% for lastvideo in lastvideos %}
                                     {{ lastvideo.embed|raw }}
                                 {% endfor %}
