@@ -27,29 +27,32 @@
                         {% for article in articles %}
                             <div class="entry clearfix">
                                 <div class="entry-image">
-                                    <img src="{{ asset("imagesArticles/" ~ article.image) }}" class="card-img-top image-menu" alt="...">
+                                    <img src="{{ asset("imagesArticles/" ~ article.image) }}"
+                                         class="card-img-top image-menu" alt="...">
                                 </div>
                                 <div class="entry-c">
                                     <div class="entry-title">
-                                        <h1><a href="{{ path('article', {id: article.id }) }}">{{ article.Titre }}</a></h1>
+                                        <h1><a href="{{ path('article', {id: article.id }) }}">{{ article.Titre }}</a>
+                                        </h1>
                                         <h2>{{ article.SousTitre }}</h2>
                                     </div>
                                     <ul class="entry-meta clearfix">
-                                        <li><i class="icon-calendar3"></i>{{ article.date|format_datetime('full','none',locale='fr') }}</li>
+                                        <li>
+                                            <i class="icon-calendar3"></i> {{ article.date|format_datetime('full','none',locale='fr') }}
+                                        </li>
+                                        <li><i class="icon-comment"> {{ article.commentaireArticles|length }}</i></li>
                                     </ul>
                                     <div class="entry-content">
-                                        <p>{{ article.Texte|slice(0, 250)|raw }}</p>
-                                        <a href="{{ path('article', {id: article.id }) }}" class="more-link" >Read More</a>
+                                        {% if article.Texte|length < 250 %}
+                                            <p class="mt-0">{{ article.Texte|slice(0, 250)|raw }}</p>
+                                        {% elseif article.Texte|length > 250 %}
+                                            <p class="mt-0">{{ article.Texte|slice(0, 250)|raw }}...</p>
+                                        {% endif %}
+                                        <a href="{{ path('article', {id: article.id }) }}" class="more-link ">Lire la
+                                            suite</a>
                                     </div>
                                 </div>
                             </div>
-                            {#							<h2><a href="blog-single-full.html">{{ article.Titre }}</a></h2>#}
-                            {#							{{ article.Titre }}#}
-                            {#							{{ article.SousTitre }}#}
-                            {#							{{ article.Texte|raw }}#}
-                            {#							<img src="{{ asset("imagesArticles/" ~ article.image) }}" class="card-img-top image-menu" alt="...">#}
-                            {#							{{ article.date|date("d/mmmm/Y") }}	#}
-                            {#			#}
                         {% endfor %}
                     </div><!-- #posts end -->
                 </div><!-- .postcontent end -->
@@ -59,14 +62,14 @@
                     <div class="sidebar-widgets-wrap">
                         <div class="widget clearfix">
                             <div class="widget clearfix">
-                                <h4>Dernière musique</h4>
+                                <h3>Dernière musique</h3>
                                 {% for music in musics %}
                                     {{ music.embed|raw }}
                                 {% endfor %}
                             </div>
                         </div>
                         <div class="widget clearfix">
-                            <h4>Prochain concert</h4>
+                            <h3>Prochain concert</h3>
                             {% for nextconcert in nextconcerts %}
                                 <div class="spost clearfix">
                                     <div class="entry-image">
@@ -78,7 +81,7 @@
                                             <h4><a href="#">{{ nextconcert.titre }}</a></h4>
                                         </div>
                                         <div class="entry-title">
-                                            <h4><a href="#"><img src="images/icons/map-icon.png"
+                                            <h4><a href="#"><img src="images/icons/map-icon-red.png"
                                                                  style="width: 1em">{{ nextconcert.lieu }}</a></h4>
                                         </div>
                                         <ul class="entry-meta">
@@ -89,7 +92,7 @@
                             {% endfor %}
                         </div>
                         <div class="widget clearfix">
-                            <h4>Dernière vidéo</h4>
+                            <h3>Dernière vidéo</h3>
                             {% for lastvideo in lastvideos %}
                                 {{ lastvideo.embed|raw }}
                             {% endfor %}

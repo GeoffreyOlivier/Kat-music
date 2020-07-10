@@ -61,7 +61,7 @@ class NewsController extends AbstractController
         $lastvideo = $this->getDoctrine()->getRepository(Video::class)->LastVideo();
         $nextconcert = $this->getDoctrine()->getRepository(Event::class)->NextConcert();
         $repo = $this->getDoctrine()->getRepository(CommentaireArticle::class);
-        $countvalide =$repo->findBy(array('Valide'=>1));
+        $countvalide =$repo->findBy(array('Valide'=>1, 'Article'=>$id));
         $CommentaireArticle = new CommentaireArticle();
         $form = $this->createForm(CommentaireArticleType::class, $CommentaireArticle);
 
