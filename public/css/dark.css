@@ -148,8 +148,8 @@ body.top-search-open .dark #header-wrap:not(.not-dark) #top-search a,
 .dark #header-wrap:not(.not-dark) #side-panel-trigger a:hover,
 .dark #header-wrap:not(.not-dark) #top-account a:hover,
 .dark #header-wrap:not(.not-dark) #top-search form input {
-	color: rgba(255,255,255,0.7);
-	text-shadow: 5px 2px 3px #2E3192;
+	color: rgba(255,255,255);
+	/*text-shadow: 5px 2px 3px #2E3192;*/
 }
 
 .dark #header.full-header #header-wrap:not(.not-dark) #primary-menu > ul,

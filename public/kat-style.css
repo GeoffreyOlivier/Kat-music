@@ -4,11 +4,28 @@
     background-color:#1a1a1a;
 }
 
+/*#primary-menu ul li > a {*/
+
+/*    font-family: ' Montserrat Subrayada', 'Finger Paint', cursive;*/
+
+/*}*/
+
 #primary-menu ul li > a {
-
-    font-family: ' Montserrat Subrayada', 'Finger Paint', cursive;
-
+    display: block;
+    line-height: 22px;
+    padding: 39px 15px;
+    color: #fff;
+    /*text-shadow: 0px 0px 2px rgb(255,255,255);*/
+    font-weight: bold;
+    font-size: 29px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Finger Paint' , sans-serif;
+    -webkit-transition: margin .4s ease, padding .4s ease;
+    -o-transition: margin .4s ease, padding .4s ease;
+    transition: margin .4s ease, padding .4s ease;
 }
+
 p{
     color: #fff;
 }
@@ -30,8 +47,37 @@ label {
     margin-bottom: 10px;
     cursor: pointer;
 }
+h1 > span:not(.nocolor):not(.badge),
+h2 > span:not(.nocolor):not(.badge),
+h3 > span:not(.nocolor):not(.badge),
+h4 > span:not(.nocolor):not(.badge),
+h5 > span:not(.nocolor):not(.badge),
+h6 > span:not(.nocolor):not(.badge) { color: #d57f12; }
 
-/* Akkueil */
+a {
+    text-decoration: none !important;
+    color: #d57f12;
+}
+
+
+ /* ====================================== message ========================================*/
+.style-msg, .style-msg2 {
+    position: relative;
+    display: block;
+    color: #444;
+    border-left: 4px solid rgba(0,0,0,0.1);
+     margin-bottom: 0px;
+}
+.successmsg {
+    background: #83f678;
+    color: #184B21;
+}
+
+/* ====================================== sidebar =========================================*/
+.spost .entry-title h4 a, .mpost .entry-title h4 a {
+    color: #ffffff;
+}
+/* ====================================== Accueil ======================================== */
 
 .présentation_kat h3{
     font-size:44px;
@@ -148,10 +194,11 @@ label {
     }
 }
 
+/* ===================================================== Music ====================================== */
 
 .img-bd-music{
     /* The image used */
-    background-image: url("images_kat/bd-guitare2.jpg");
+    background-image: url("images_kat/kat.jpg");
 
     /* Set a specific height */
     height: 450px;
@@ -163,31 +210,10 @@ label {
     background-size: cover;
 }
 
-.img-bd-live{
-    /* The image used */
-    background-image: url("images_kat/bd-live.jpg");
 
-    /* Set a specific height */
-    height: 450px;
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.img-bd-news{
-    /* The image used */
-    background-image: url("images_kat/bd-news.jpg");
 
-    /* Set a specific height */
-    height: 450px;
+/* ===================================================== Video ====================================== */
 
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 .img-bd-video{
     /* The image used */
     background-image: url("images_kat/bd-video.jpg");
@@ -233,70 +259,77 @@ label {
     }
 }
 
-.card-img-top.image-menu{
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
+
+
+
+
+/* ================================================ Live Agenda =================================*/
+.img-bd-live{
+    /* The image used */
+    background-image: url("images_kat/bd-live.jpg");
+
+    /* Set a specific height */
+    height: 450px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
-/*#primary-menu ul li > a {*/
-/*    display: block;*/
-/*    line-height: 22px;*/
-/*    padding: 39px 15px;*/
-/*    color: #f99d2a;*/
-/*    !*text-shadow: 0px 0px 2px rgb(255,255,255);*!*/
-/*    font-weight: bold;*/
-/*    font-size: 29px;*/
-/*    letter-spacing: 1px;*/
-/*    text-transform: uppercase;*/
-/*    font-family: 'Raleway', sans-serif;*/
-/*    -webkit-transition: margin .4s ease, padding .4s ease;*/
-/*    -o-transition: margin .4s ease, padding .4s ease;*/
-/*    transition: margin .4s ease, padding .4s ease;*/
-/*}*/
-
-/*.dark #header-wrap:not(.not-dark) #top-search form input {*/
-/*    color: #f99d2a ;*/
-/*    !*text-shadow: 5px 2px 3px #2E3192;*!*/
-/*}*/
-h1 > span:not(.nocolor):not(.badge),
-h2 > span:not(.nocolor):not(.badge),
-h3 > span:not(.nocolor):not(.badge),
-h4 > span:not(.nocolor):not(.badge),
-h5 > span:not(.nocolor):not(.badge),
-h6 > span:not(.nocolor):not(.badge) { color: #222fbc; }
-
-a {
-    text-decoration: none !important;
-    color: #222fbc;
-}
-
-.entry_liveAgenda{
-    min-height:351.5px;
-}
-/* Live Agenda */
 .p-presentation{
     color: #0b0b0b;
 }
 .cursor_none{
     cursor: default;
 }
+.entry-date{
+    height:84px!important;
+}
+.entry_liveAgenda{
+    min-height:351.5px;
+}
 
-/* News */
+/* ===================================================== News ====================================*/
+.img-bd-news{
+    /* The image used */
+    background-image: url("images_kat/bd-news.jpg");
 
+    /* Set a specific height */
+    height: 450px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-img-top.image-menu{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
 .small-thumbs .entry-image img{
     border-radius: 0;
     border: solid 1px white;
-    box-shadow: 1px 1px 3px #222fbc;
+    box-shadow: 1px 1px 3px #d57f12;
 }
 
 .entry-title h1{
     margin-bottom: 0px;
-    color: #222fbc;
+    color: #d57f12;
 }
 
-/* Article */
+/*  ========================================== Article ===================================== */
 
+.more-link {
+    display: inline-block;
+    border-bottom: 1px solid #d57f12;
+    padding: 0 2px;
+    font-family: 'Crete Round', serif;
+    font-style: italic;
+    text-decoration: none;
+}
 /*.articleImg{*/
 /*    border-radius: 0;*/
 /*    border: solid 1px white;*/
@@ -351,8 +384,5 @@ a {
     border-bottom: 0px solid #EEE;
 }
 
-/* LiveAgenda */
 
-.entry-date{
-    height:84px!important;
-}
+
