@@ -30,7 +30,9 @@
                                 <!-- Entry Meta
                                 ============================================= -->
                                 <ul class="entry-meta clearfix">
-                                    <li><i class="icon-calendar3"></i> {{ article.date|format_datetime('full','none',locale='fr') }}</li>
+                                    <li>
+                                        <i class="icon-calendar3"></i> {{ article.date|format_datetime('full','none',locale='fr') }}
+                                    </li>
 
                                 </ul><!-- .entry-meta end -->
 
@@ -69,17 +71,15 @@
                                                             language="javascript">document.write('' +
                                                             '<img class="avatar avatar-60 photo avatar-default" height="60" width="60" ' +
                                                             'src="{{ asset("images_kat/icon_commentaire/") }}' + Math.round((Math.random() * 8) + 1) + '.png" />');
-                                                            </script>
+                                                    </script>
                                                 </span>
                                             </div>
                                         </div>
                                         <div class="comment-content clearfix">
-                                            <div class="comment-author">{{ commentaireArticle.pseudo }}<span>
-                                                    <a title="Permalink to this comment">{{ commentaireArticle.createdAt|format_datetime('full','none',locale='fr') }}</a></span>
+                                            <div class="comment-author">{{ commentaireArticle.pseudo }}
+                                                <span><a title="Permalink to this comment">{{ commentaireArticle.createdAt|format_datetime('full','none',locale='fr') }}</a></span>
                                             </div>
-
                                             <p>{{ commentaireArticle.content|raw }}</p>
-
                                             <a class="comment-reply-link" href="#"><i class="icon-reply"></i></a>
                                         </div>
                                         <div class="clear  "></div>
@@ -100,33 +100,34 @@
 
                                 <h3 class="comments-title">Laissez un <span>Commentaire</span></h3>
 
-                                <form class="clearfix" action="#" method="post" id="commentform">
-                                    {{ form_start(form) }}
+                                {{ form_start(form, {'attr': {'id': 'demo-form'}}) }}
 
-                                    <div class="row">
-                                        <div class="col-lg-4 ">
-                                            {{ form_label(form.Pseudo) }}
-                                            {{ form_widget(form.Pseudo) }}
-                                        </div>
-                                        <div class="col-lg-4 ">
-                                            {{ form_label(form.Email) }}
-                                            {{ form_widget(form.Email) }}
-                                        </div>
+                                <div class="row">
+                                    <div class="col-lg-4 ">
+                                        {{ form_label(form.Pseudo) }}
+                                        {{ form_widget(form.Pseudo) }}
                                     </div>
-                                    <div class="row ">
-                                        <div class="col-lg-12 mt-5 ">
-                                            {{ form_widget(form.Content) }}
-                                        </div>
+                                    <div class="col-lg-4 ">
+                                        {{ form_label(form.Email) }}
+                                        {{ form_widget(form.Email) }}
                                     </div>
-                                    <div class="col-lg-4 mt-3 mr-5">
-                                        <button name="submit" type="submit" id="submit-button" tabindex="5"
-                                                value="Submit"
-                                                class="button button-3d button-xlarge button-rounded button-amber ">
-                                            Publier
-                                        </button>
+                                </div>
+                                <div class="row ">
+                                    <div class="col-lg-12 mt-5 ">
+                                        {{ form_widget(form.Content) }}
                                     </div>
-                                    {{ form_end(form) }}
-                                </form>
+                                </div>
+                                <div class="col-lg-4 mt-3 mr-5">
+                                    <button class="g-recaptcha button button-3d button-xlarge button-rounded button-amber"
+                                            data-callback='onSubmit'
+                                            data-action='submit'
+                                            tabindex="5"
+                                            value="Submit"
+                                            data-sitekey="6Leo2q8ZAAAAAH09pfMhBNaCIT2KoTpXEyVJ1TmW"
+                                    >Publier
+                                    </button>
+                                </div>
+                                {{ form_end(form) }}
                             </div>
                         </div>
                     </div>
@@ -152,11 +153,11 @@
                                         </div>
                                         <div class="entry-c">
                                             <div class="entry-title">
-                                                <h4><a href="#">{{ nextconcert.titre }}</a></h4>
+                                                <h4><a href="{{path('liveagenda')}}">{{ nextconcert.titre }}</a></h4>
                                             </div>
                                             <div class="entry-title">
-                                                <h4><img src="{{ asset("images/icons/map-icon-red.png") }}"
-                                                         style="width: 1em">{{ nextconcert.lieu }}</h4>
+                                                <h4><img src="{{ asset("images/icons/icon-map-white.png") }}"
+                                                         style="width: 1em">  {{ nextconcert.lieu }}</h4>
                                             </div>
                                             <ul class="entry-meta">
                                                 <li>{{ nextconcert.date|format_datetime('full','none',locale='fr') }}</li>
@@ -176,4 +177,7 @@
                 </div>
             </div>
         </section><!-- #content end -->
+
+
+
     {% endblock %}

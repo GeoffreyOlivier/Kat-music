@@ -20,17 +20,30 @@ class LiveAgendaController extends AbstractController
      */
     public function liveagenda()
     {
-        $repo = $this->getDoctrine()->getRepository(Event::class);
-        $event = $repo->findAll();
+        $event = $this->getDoctrine()->getRepository(Event::class)->NextConcert();
         $music = $this->getDoctrine()->getRepository(Music::class)->LastMusic();
         $article = $this->getDoctrine()->getRepository(Article::class)->sidebarArticles();
         $lastvideo = $this->getDoctrine()->getRepository(Video::class)->LastVideo();
-        return $this->render('index/liveagenda.html.twig', [
+        return $this->render('Liveagenda/liveagenda.html.twig', [
             'events' => $event,
             'music'=> $music,
             'musics' => $music,
             'articles' => $article,
             'lastvideos' => $lastvideo,]);
     }
+
+//    /**
+//     * @Route("/liveagenda", name="modal")
+//     *
+//     */
+//    public function modal()
+//    {
+//        $repo = $this->getDoctrine()->getRepository(Event::class);
+//        $event = $repo->findAll();
+//
+//        return $this->render('Liveagenda/modal.html.twig', [
+//            'events' => $event,
+//         ]);
+//    }
 
 }

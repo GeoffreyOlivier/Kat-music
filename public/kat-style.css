@@ -20,11 +20,12 @@
     font-size: 29px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    font-family: 'Finger Paint' , sans-serif;
+    font-family: 'Raleway' , sans-serif;
     -webkit-transition: margin .4s ease, padding .4s ease;
     -o-transition: margin .4s ease, padding .4s ease;
     transition: margin .4s ease, padding .4s ease;
 }
+
 
 p{
     color: #fff;
@@ -78,6 +79,13 @@ a {
     color: #ffffff;
 }
 /* ====================================== Accueil ======================================== */
+.section {
+    position: relative;
+    margin: 0px 0;
+    padding: 60px 0;
+    background-color: #F9F9F9;
+    overflow: hidden;
+}
 
 .présentation_kat h3{
     font-size:44px;
@@ -258,11 +266,6 @@ a {
         text-transform: uppercase;
     }
 }
-
-
-
-
-
 /* ================================================ Live Agenda =================================*/
 .img-bd-live{
     /* The image used */
