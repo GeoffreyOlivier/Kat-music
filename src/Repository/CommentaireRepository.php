@@ -31,6 +31,15 @@ class CommentaireRepository extends ServiceEntityRepository
         ;
     }
 
+    public function CommentaireAccueil()
+    {
+        return $this->createQueryBuilder('c')
+            ->setMaxResults(3)
+            ->orderBy('c.id','DESC')
+            ->getQuery()
+            ->getResult();
+    }
+
 
     /*
     public function findOneBySomeField($value): ?Commentaire

@@ -72,12 +72,7 @@ class ContactController extends AbstractController
         if ($formcom->isSubmitted() && $formcom->isValid()) {
             $em->persist($commentaire);
             $em->flush();
-            $message = (new \Swift_Message('Hello Email'))
-                ->setFrom('send@example.com')
-                ->setTo('geoff56150@gmail.com')
-                ->setBody('You should see me from the profiler!');
 
-            $mailer->send($message);
             $this->addFlash('success', 'Commentaire soumis, en attente de validation');
             return $this->redirectToRoute('contact');
         }

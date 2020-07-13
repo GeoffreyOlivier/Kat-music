@@ -39,16 +39,13 @@
                                             <li><a href="#"><i class="icon-map-marker2"></i>{{ event.lieu }}</a></li>
                                         </ul>
                                         <div class="entry-content">
-                                            <p class="p-presentation">{{ event.presentation }}</p>
-                                            <div class="col-sm-4">
                                                 {% if event.map %}
                                                     <a href="{{ event.map }}"
                                                        onclick="window.open(this.href); return false;"
                                                        class="button button-3d button-mini button-rounded button-blue"
                                                        disabled="disabled">Voir sur la carte</a>
                                                 {% endif %}
-                                            </div>
-                                            <div class="col-sm-4">
+
                                                 {% if not event.billeterie %}
                                                     <a class="button button-3d button-mini button-rounded button-leaf cursor_none"
                                                        disabled="disabled">Gratuit</a>
@@ -58,7 +55,8 @@
                                                        class="button button-3d button-mini button-rounded button-blue"
                                                        disabled="disabled">Billeterie</a>
                                                 {% endif %}
-                                            </div>
+
+                                            <p class="p-presentation">{{ event.presentation }}</p>
 
                                         </div>
                                     </div>
