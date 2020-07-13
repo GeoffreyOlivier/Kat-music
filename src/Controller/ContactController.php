@@ -47,7 +47,7 @@ class ContactController extends AbstractController
             $mailer = new \Swift_Mailer($transport);
             $message = (new \Swift_Message('Nouveau contact'))
             ->setFrom($contact['email'])
-            ->setTo('yorikmoreau@gmail.com')
+            ->setTo('test.send.mail.dev@gmail.com')
             ->setBody(
                 $this->render('emails/contact.html.twig', [
                         'email' => $contact['email'],

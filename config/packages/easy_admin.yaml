@@ -59,7 +59,7 @@ easy_admin:
                     - { property: 'Presentation' }
                     - { property: 'Billeterie', label: 'Liens de la billeterie'}
                     - { property: 'imageFile', type: 'file', base_path: 'imagesArticles' }
-                    - { property: 'map', label: 'Embed du lieu sur google maps'}
+                    - { property: 'map', label: 'liens de google map'}
         Commentaire:
             class: App\Entity\Commentaire
             disabled_actions: ['new']
