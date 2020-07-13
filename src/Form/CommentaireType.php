@@ -17,7 +17,7 @@ class CommentaireType extends AbstractType
         $builder
             ->add('Pseudo')
             ->add('Email' )
-            ->add('Content',CKEditorType::class)
+            ->add('Content')
             ->add('envoye',SubmitType::class)
         ;
     }

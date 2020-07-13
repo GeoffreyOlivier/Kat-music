@@ -3,24 +3,24 @@ easy_admin:
     formats:
         time: 'h:i:s'
     entities:
-        Article:
+        News:
             class: App\Entity\Article
             list:
                 fields:
                     - { property: 'Titre'}
                     - { property: 'SousTitre'}
                     - { property: 'Texte'}
-                    - { property: 'Online' }
+                    - { property: 'Online',label: 'En ligne'}
                     - { property: 'image', type: 'image', base_path: 'imagesArticles' }
                     - { property: 'Date', type: 'date' }
             form:
                 fields:
                     - { property: 'Titre'}
                     - { property: 'SousTitre'}
-                    - { property: 'Online' }
+                    - { property: 'Online',label: 'En ligne'}
                     - { property: 'Texte', type: 'fos_ckeditor'}
                     - { property: 'imageFile', type: 'file', base_path: 'imagesArticles' }
-        Music:
+        MusiK:
             class: App\Entity\Music
             list:
                 fields:
@@ -30,7 +30,7 @@ easy_admin:
                     - { property: 'Titre'}
                     - { property: 'Embed'}
 
-        Video:
+        Vidéos:
             class: App\Entity\Video
             list:
                 fields:
@@ -47,7 +47,7 @@ easy_admin:
                     - { property: 'Horaire' }
                     - { property: 'Lieu'}
                     - { property: 'Titre' }
-                    - { property: 'Presentation' }
+                    - { property: 'Presentation',label: 'Présentation' }
                     - { property: 'Billeterie',  }
                     - { property: 'image', type: 'image', base_path: 'imagesArticles' }
             form:
@@ -56,47 +56,63 @@ easy_admin:
                     - { property: 'Horaire', type: 'time' }
                     - { property: 'Lieu'}
                     - { property: 'Titre' }
-                    - { property: 'Presentation' }
+                    - { property: 'Presentation',label: 'Présentation' }
                     - { property: 'Billeterie', label: 'Liens de la billeterie'}
                     - { property: 'imageFile', type: 'file', base_path: 'imagesArticles' }
                     - { property: 'map', label: 'Embed du lieu sur google maps'}
-        Commentaire:
+        LivreDor:
             class: App\Entity\Commentaire
             disabled_actions: ['new']
             list:
                 fields:
                     - { property: 'pseudo'}
                     - { property: 'DateTime' }
-                    - { property: 'Commentaire' }
+                    - { property: 'Content',label: 'Commentaire' }
                     - { property: 'Valide' }
                     - { property: 'Email' }
             form:
                 fields:
                     - { property: 'pseudo'}
                     - { property: 'DateTime' }
-                    - { property: 'Commentaire',  type: 'fos_ckeditor' }
+                    - { property: 'Content', type: 'fos_ckeditor' }
                     - { property: 'Valide' }
                     - { property: 'Email' }
-        CommentaireArticle:
+        CommentairesArticles:
             class: App\Entity\CommentaireArticle
             disabled_actions: ['new']
             list:
                 fields:
                     - { property: 'pseudo'}
-                    - { property: 'CreatedAt' }
-                    - { property: 'Content' }
+                    - { property: 'CreatedAt',label: 'Créé le:' }
+                    - { property: 'Content',label: 'Commentaire' }
                     - { property: 'Valide' }
                     - { property: 'Email' }
             form:
                 fields:
                     - { property: 'pseudo'}
-                    - { property: 'CreatedAt' }
-                    - { property: 'Content',  type: 'fos_ckeditor' }
+                    - { property: 'CreatedAt',label: 'Créé le:' }
+                    - { property: 'Content',label: 'Commentaire',  type: 'fos_ckeditor' }
                     - { property: 'Valide' }
                     - { property: 'Email' }
+        PhotosAccueil:
+            class: App\Entity\PhotosAccueil
+            disabled_actions: ['delete']
+            list:
+                fields:
+                    - { property: 'id', label: 'N° emplacement'}
+                    - { property: 'image', type: 'image', base_path: 'imagesArticles' }
+                    - { property: 'titre' }
+                    - { property: 'sous_titre' }
+            form:
+                fields:
+                    - { property: 'imageFile', type: 'file', base_path: 'imagesArticles' }
+                    - { property: 'titre' }
+                    - { property: 'sous_titre' }
 
     design:
+        brand_color: 'rgba(26, 188, 156, 0.85)'
         form_theme:
             - '@EasyAdmin/form/bootstrap_4.html.twig'
             - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+    
 
