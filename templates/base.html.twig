@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
     <head>
+{#        icon a garder#}
+{#        <a target="_blank" href="https://icones8.fr/icons/set/map-pin">Epingle de carte icon</a> icône par <a target="_blank" href="https://icones8.fr">Icons8</a>#}
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <meta name="author" content="SemiColonWeb"/>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <script src="https://www.google.com/recaptcha/api.js"></script>
+        <script>
+            function onSubmit(token) {
+                document.getElementById("demo-form").submit();
+            }
+        </script>
         <!-- Document stylesheets
             ============================================= -->
         {% block stylesheets %}
-
             <link rel="icon" type="image/png" href="{{ asset('images_kat/Logo_Kat.png') }}">
             <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="text/css"/>
             <link rel="stylesheet" href="{{ asset("css/bootstrap.css") }}" type="text/css"/>
@@ -19,20 +27,15 @@
             <link rel="stylesheet" href="{{ asset("css/responsive.css") }}" type="text/css"/>
             <link rel="stylesheet" href="{{ asset("kat-style.css") }}" type="text/css"/>
             <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
-
+            <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
         {% endblock %}
-
         <!-- Document Title
         ============================================= -->
         {% block title %}
-
             <title>Kat-musik.com</title>
-
         {% endblock %}
     </head>
-
     <body class="stretched">
-
     <!-- Document Wrapper
     ============================================= -->
     <div id="wrapper" class="clearfix">
@@ -109,8 +112,6 @@
             {{ message }}
         </div>
     {% endfor %}
-
-
     {% block body %}{% endblock %}
 <footer>
 
@@ -125,7 +126,7 @@
     ============================================= -->
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/plugins.js') }}"></script>
-
+    <script src="{{ asset('js/feuille.js') }}"></script>
     <!-- Footer Scripts
     ============================================= -->
     <script src="{{ asset('js/functions.js') }}"></script>

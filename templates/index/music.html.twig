@@ -48,8 +48,8 @@
 													<h4><a href="{{ path('liveagenda') }}">{{ nextconcert.titre }}</a></h4>
 												</div>
 												<div class="entry-title">
-													<h4><a href="{{ path('liveagenda') }}"><img src="images/icons/map-icon.png"
-																		 style="width: 1em">{{ nextconcert.lieu }}</a></h4>
+													<h4><a href="{{ path('liveagenda') }}"><img src="images/icons/icon-map-white.png"
+																		 style="width: 1em">  {{ nextconcert.lieu }}</a></h4>
 												</div>
 												<ul class="entry-meta">
 													<li>{{ nextconcert.date|format_datetime('full','none',locale='fr') }}</li>
@@ -68,7 +68,9 @@
 												</div>
 												<div class="entry-c">
 													<div class="entry-title">
-														<h4><a href="{{ path('news') }}">{{ article.titre }}</a></h4>
+														<h4>
+															<a href="{{ path('article', {id: article.id }) }}">{{ article.titre }}</a>
+														</h4>
 													</div>
 													<ul class="entry-meta">
 														<li>{{ article.date|format_datetime('full','none',locale='fr') }}</li>

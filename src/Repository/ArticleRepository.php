@@ -3,8 +3,10 @@
 namespace App\Repository;
 
 use App\Entity\Article;
+use App\Entity\CommentaireArticle;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\Query\AST\Join;
 
 /**
  * @method Article|null find($id, $lockMode = null, $lockVersion = null)
@@ -56,6 +58,23 @@ class ArticleRepository extends ServiceEntityRepository
              ->getQuery()
              ->getResult();
      }
+
+//    /**
+//     * @return \Doctrine\ORM\QueryBuilder
+//     */
+//
+//    public function CommentaireValide2()
+//    {
+//        return $this->createQueryBuilder('a')
+//            ->innerJoin(
+//                CommentaireArticle::class,    // Entity
+//                'c',               // Alias
+//                Join::WITH,        // Join type
+//                'c.article_id = a.id')
+//            ->where('p.valide =:1')
+//            ->getQuery()
+//            ->getResult();
+//    }
 
     /**
      * @return Article[] Returns an array of Article objects

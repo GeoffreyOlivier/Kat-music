@@ -64,6 +64,11 @@ class Event
      */
     private $imageFile;
 
+    /**
+     * @ORM\Column(type="string", length=1500, nullable=true)
+     */
+    private $Map;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -161,5 +166,17 @@ class Event
     public function getImageFile()
     {
         return $this->imageFile;
+    }
+
+    public function getMap(): ?string
+    {
+        return $this->Map;
+    }
+
+    public function setMap(?string $Map): self
+    {
+        $this->Map = $Map;
+
+        return $this;
     }
 }

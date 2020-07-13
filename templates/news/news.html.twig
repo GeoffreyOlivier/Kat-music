@@ -5,54 +5,54 @@
     <!-- Page Title
         ============================================= -->
     <section id="page-blog" class="img-bd-news">
-
         <div class="container clearfix">
             <h1 class="center text-white titre-bd">News</h1>
         </div>
-
-    </section><!-- #page-title end -->
+    </section>
+    <!-- #page-title end -->
 
     <section id="content">
-
         <div class="content-wrap">
-
             <div class="container clearfix">
-
                 <!-- Post Content
                 ============================================= -->
                 <div class="postcontent nobottommargin clearfix">
                     <!-- Posts
                     ============================================= -->
                     <div id="posts" class="small-thumbs">
-                        {% for article in articles %}
+
+                        {% for i in range(0, articles|length-1) %}
+                            {% if articles[i].online == true %}
                             <div class="entry clearfix">
                                 <div class="entry-image">
-                                    <img src="{{ asset("imagesArticles/" ~ article.image) }}"
+                                    <img src="{{ asset("imagesArticles/" ~ articles[i].image) }}"
                                          class="card-img-top image-menu" alt="...">
                                 </div>
                                 <div class="entry-c">
                                     <div class="entry-title">
-                                        <h1><a href="{{ path('article', {id: article.id }) }}">{{ article.Titre }}</a>
+                                        <h1><a href="{{ path('article', {id: articles[i].id }) }}">{{ articles[i].Titre }}</a>
                                         </h1>
-                                        <h2>{{ article.SousTitre }}</h2>
+                                        <h2>{{ articles[i].SousTitre }}</h2>
                                     </div>
                                     <ul class="entry-meta clearfix">
                                         <li>
-                                            <i class="icon-calendar3"></i> {{ article.date|format_datetime('full','none',locale='fr') }}
+                                            <i class="icon-calendar3"></i> {{ articles[i].date|format_datetime('full','none',locale='fr') }}
                                         </li>
-                                        <li><i class="icon-comment"> {{ article.commentaireArticles|length }}</i></li>
+                                        <li><i class="icon-comment"></i>  {{ listeCount[i] }}</li>
+
                                     </ul>
                                     <div class="entry-content">
-                                        {% if article.Texte|length < 250 %}
-                                            <p class="mt-0">{{ article.Texte|slice(0, 250)|raw }}</p>
-                                        {% elseif article.Texte|length > 250 %}
-                                            <p class="mt-0">{{ article.Texte|slice(0, 250)|raw }}...</p>
+                                        {% if articles[i].Texte|length < 250 %}
+                                            <p class="mt-0">{{ articles[i].Texte|slice(0, 250)|raw }}</p>
+                                        {% elseif articles[i].Texte|length > 250 %}
+                                            <p class="mt-0">{{ articles[i].Texte|slice(0, 250)|raw }}...</p>
                                         {% endif %}
-                                        <a href="{{ path('article', {id: article.id }) }}" class="more-link ">Lire la
+                                        <a href="{{ path('article', {id: articles[i].id }) }}" class="more-link ">Lire la
                                             suite</a>
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
                         {% endfor %}
                     </div><!-- #posts end -->
                 </div><!-- .postcontent end -->
@@ -81,8 +81,8 @@
                                             <h4><a href="#">{{ nextconcert.titre }}</a></h4>
                                         </div>
                                         <div class="entry-title">
-                                            <h4><a href="#"><img src="images/icons/map-icon-red.png"
-                                                                 style="width: 1em">{{ nextconcert.lieu }}</a></h4>
+                                            <h4><a href="#"><img src="images/icons/icon-map-white.png"
+                                                                 style="width: 1em">  {{ nextconcert.lieu }}</a></h4>
                                         </div>
                                         <ul class="entry-meta">
                                             <li>{{ nextconcert.date|format_datetime('full','none',locale='fr') }}</li>
@@ -102,39 +102,4 @@
             </div>
         </div>
     </section><!-- #content end -->
-    <!-- Footer
-    ============================================= -->
-
-    <!-- Content
-    ============================================= -->
-    {#		<section id="content">#}
-
-    {#			<div class="content-wrap">#}
-
-    {#				<div class="container clearfix">#}
-
-    {#					<!-- Posts#}
-    {#					============================================= -->#}
-    {#					<div id="posts">#}
-
-    {#						{% for article in articles %}#}
-    {#							<h2><a href="blog-single-full.html">{{ article.Titre }}</a></h2>#}
-    {#							{{ article.Titre }}#}
-    {#							{{ article.SousTitre }}#}
-    {#							{{ article.Texte|raw }}#}
-    {#							<img src="{{ asset("imagesArticles/" ~ article.image) }}" class="card-img-top image-menu" alt="...">#}
-    {#							{{ article.date|date("d/mmmm/Y") }}	#}
-    {#			#}
-    {#						{% endfor %}#}
-    {#						</div>#}
-
-    {#					  #}
-    {#					<!-- .pager end -->#}
-
-    {#				</div>#}
-
-    {#			</div>#}
-
-    {#		</section><!-- #content end -->#}
-
 {% endblock %}

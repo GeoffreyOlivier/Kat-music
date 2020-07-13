@@ -10,12 +10,14 @@ easy_admin:
                     - { property: 'Titre'}
                     - { property: 'SousTitre'}
                     - { property: 'Texte'}
+                    - { property: 'Online' }
                     - { property: 'image', type: 'image', base_path: 'imagesArticles' }
                     - { property: 'Date', type: 'date' }
             form:
                 fields:
                     - { property: 'Titre'}
                     - { property: 'SousTitre'}
+                    - { property: 'Online' }
                     - { property: 'Texte', type: 'fos_ckeditor'}
                     - { property: 'imageFile', type: 'file', base_path: 'imagesArticles' }
         Music:
@@ -57,6 +59,7 @@ easy_admin:
                     - { property: 'Presentation' }
                     - { property: 'Billeterie', label: 'Liens de la billeterie'}
                     - { property: 'imageFile', type: 'file', base_path: 'imagesArticles' }
+                    - { property: 'map', label: 'Embed du lieu sur google maps'}
         Commentaire:
             class: App\Entity\Commentaire
             disabled_actions: ['new']

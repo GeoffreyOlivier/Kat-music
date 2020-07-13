@@ -26,10 +26,19 @@ class EventRepository extends ServiceEntityRepository
     public function NextConcert()
     {
         return $this->createQueryBuilder('e')
-            ->setMaxResults(3)
+            ->orderBy('e.id','DESC')
             ->getQuery()
             ->getResult()
         ;
+    }
+    public function Next3Concert()
+    {
+        return $this->createQueryBuilder('e')
+            ->orderBy('e.id','DESC')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult()
+            ;
     }
 
 
