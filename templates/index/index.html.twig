@@ -7,7 +7,7 @@
                  data-top-bottom="background-position:0px -500px;">
             <div class="container clearfix">
                 <h1>Greg Vignali</h1>
-                <span>Musicien</span>
+                <span>BlueKat</span>
             </div>
         </section><!-- #page-title end -->
         <!-- Page Title Mobile
@@ -15,7 +15,7 @@
         <section id="page-title-mobile" class="page-title-parallax-mobile page-title-dark page-title-right bd-accueil">
             <div class="container clearfix">
                 <h1>Greg Vignali</h1>
-                <span>Musicien</span>
+                <span>BlueKat </span>
             </div>
         </section><!-- #page-title end -->
         <!-- Content
@@ -45,8 +45,10 @@
                      style="background-image: url('images_kat/kat_background2.jpg'); background-size: cover; padding: 100px 0;"
                      data-bottom-top="background-position:0px 0px;" data-top-bottom="background-position:0px -500px;">
                     <div class="container clearfix">
-                        <h1>Yann Bertho</h1>
-                        <span>Musicien</span>
+                        <div class="col_one_fourth nobottommargin center" data-animate="swing" data-delay="200">
+                            <h1>YAÑ MATTWI</h1>
+                            <span>BlueKat</span>
+                        </div>
                     </div>
                 </div>
                 <!-- Page Title Mobile
@@ -57,8 +59,8 @@
                      data-top-bottom="background-position:800px -250px;">
                     <div class="container clearfix">
                         <div class="col_one_fourth nobottommargin center" data-animate="swing" data-delay="200">
-                            <h1>Yann Bertho</h1>
-                            <span>Musicien</span>
+                            <h1>YAÑ MATTWI</h1>
+                            <span>BlueKat</span>
                         </div>
                     </div>
                 </div>
@@ -69,45 +71,24 @@
                      data-arrows="false">
                     <div class="flexslider">
                         <div class="slider-wrap">
-                            <div class="slide">
-                                <div class="testi-image">
-                                    <a href="#"><img src="images/testimonials/3.jpg" alt="Customer Testimonails"></a>
-                                </div>
-                                <div class="testi-content">
-                                    <p>Similique fugit repellendus expedita excepturi iure perferendis provident quia
-                                        eaque. Repellendus, vero numquam?</p>
-                                    <div class="testi-meta">
-                                        Steve Jobs
-                                        <span>Apple Inc.</span>
+                            {% for commentaire in livreDor %}
+                                <div class="slide">
+                                    <div class="testi-image">
+                                        <script type="text/javascript"
+                                                language="javascript">document.write('' +
+                                                '<img class="avatar avatar-60 photo avatar-default" height="60" width="60" ' +
+                                                'src="{{ asset("images_kat/icon_commentaire/") }}' + Math.round((Math.random() * 8) + 1) + '.png" />');
+                                        </script>
+                                    </div>
+                                    <div class="testi-content">
+                                        <p>{{ commentaire.content|raw }}</p>
+                                        <div class="testi-meta">
+                                            {{ commentaire.pseudo }}
+                                            <span>{{ commentaire.DateTime|format_datetime('full','none',locale='fr') }}</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="slide">
-                                <div class="testi-image">
-                                    <a href="#"><img src="images/testimonials/2.jpg" alt="Customer Testimonails"></a>
-                                </div>
-                                <div class="testi-content">
-                                    <p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos
-                                        obcaecati id culpa corporis molestias.</p>
-                                    <div class="testi-meta">
-                                        Collis Ta'eed
-                                        <span>Envato Inc.</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide">
-                                <div class="testi-image">
-                                    <a href="#"><img src="images/testimonials/1.jpg" alt="Customer Testimonails"></a>
-                                </div>
-                                <div class="testi-content">
-                                    <p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam
-                                        cum libero illo rerum!</p>
-                                    <div class="testi-meta">
-                                        John Doe
-                                        <span>XYZ Inc.</span>
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -139,7 +120,7 @@
                                 </ul>
                                 <div class="entry-content">
                                     <p>{{ article.Texte|slice(0, 250)|raw }}</p>
-                                    <a href="blog-single.html" class="more-link">Read More</a>
+                                    <a href="{{ path('news') }}" class="more-link">Read More</a>
                                 </div>
                             </div>
                         </div>
@@ -193,83 +174,23 @@
                 <div id="portfolio"
                      class="portfolio portfolio-5 portfolio-nomargin portfolio-full portfolio-notitle clearfix"
                      style="margin-bottom: -80px !important;">
-                    <article class="portfolio-item pf-media pf-icons">
-                        <div class="portfolio-image">
-                            <a href="portfolio-single.html">
-                                <img src="images_kat/Greg_sol_dièse_crop_resize.jpg" alt="Greg_G#">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <a href="images_kat/Greg_sol_dièse.jpg" class="left-icon" data-lightbox="image"><i
-                                            class="icon-line-plus"></i></a>
+                     {% for photo in photosAccueil %}
+                        <article class="portfolio-item pf-media pf-icons">
+                            <div class="portfolio-image">
+                                <a href="portfolio-single.html">
+                                    <img src="{{ asset("imagesArticles/" ~ photo.image) }}" alt="{{ photo.titre }}">
+                                </a>
+                                <div class="portfolio-overlay">
+                                    <a href="{{ asset("imagesArticles/" ~ photo.image) }}" class="left-icon" data-lightbox="image"><i
+                                                class="icon-line-plus"></i></a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="portfolio-desc">
-                            <h3><a href="portfolio-single.html">Open Imagination</a></h3>
-                            <span><a href="#">Media</a>, <a href="#">Icons</a></span>
-                        </div>
-                    </article>
-                    <article class="portfolio-item pf-illustrations">
-                        <div class="portfolio-image">
-                            <a href="portfolio-single.html">
-                                <img src="images_kat/Kat_Bass_crop_resize.jpg" alt="Locked Steel Gate">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <a href="images_kat/Kat_Bass.jpg" class="left-icon" data-lightbox="image"><i
-                                            class="icon-line-plus"></i></a>
+                            <div class="portfolio-desc">
+                                <h3><a href="portfolio-single.html">{{ photo.titre }}</a></h3>
+                                <span>{{ photo.SousTitre }}</span>
                             </div>
-                        </div>
-                        <div class="portfolio-desc">
-                            <h3><a href="portfolio-single.html">Locked Steel Gate</a></h3>
-                            <span><a href="#">Illustrations</a></span>
-                        </div>
-                    </article>
-                    <article class="portfolio-item pf-graphics pf-uielements">
-                        <div class="portfolio-image">
-                            <a href="#">
-                                <img src="images_kat/Kat_guitare_et_violoncelle_crop_resize.jpg" alt="Mac Sunglasses">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <a href="images_kat/Kat_guitare_et_violoncelle.jpg" class="left-icon"
-                                   data-lightbox="image"><i
-                                            class="icon-line-plus"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-desc">
-                            <h3><a href="portfolio-single-video.html">Mac Sunglasses</a></h3>
-                            <span><a href="#">Graphics</a>, <a href="#">UI Elements</a></span>
-                        </div>
-                    </article>
-                    <article class="portfolio-item pf-icons pf-illustrations">
-                        <div class="portfolio-image">
-                            <a href="portfolio-single-gallery.html"><img
-                                        src="images_kat/Kat_White_and_Black_crop_resize.jpg" alt="Morning Dew"></a>
-                            <div class="portfolio-overlay" data-lightbox="gallery">
-                                <a href="images_kat/Kat_White_and_Black_crop.jpg" class="left-icon"
-                                   data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
-                                <a href="images_kat/Kat_White_and_Black.jpg" class="hidden"
-                                   data-lightbox="gallery-item"></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-desc">
-                            <h3><a href="portfolio-single-gallery.html">Morning Dew</a></h3>
-                            <span><a href="#">Icons</a>, <a href="#">Illustrations</a></span>
-                        </div>
-                    </article>
-                    <article class="portfolio-item pf-uielements pf-media">
-                        <div class="portfolio-image">
-                            <a href="portfolio-single.html">
-                                <img src="images_kat/kat_infrarouge_crop_resize.jpg" alt="Console Activity">
-                            </a>
-                            <div class="portfolio-overlay">
-                                <a href="images_kat/kat_infrarouge.jpg" class="left-icon" data-lightbox="image"><i
-                                            class="icon-line-plus"></i></a>
-                            </div>
-                        </div>
-                        <div class="portfolio-desc">
-                            <h3><a href="portfolio-single.html">Console Activity</a></h3>
-                            <span><a href="#">UI Elements</a>, <a href="#">Media</a></span>
-                        </div>
-                    </article>
+                        </article>
+                     {% endfor %}
                 </div><!-- #portfolio end -->
             </div>
         </section><!-- #content end -->
