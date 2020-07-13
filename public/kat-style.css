@@ -26,6 +26,10 @@
     transition: margin .4s ease, padding .4s ease;
 }
 
+#primary-menu ul li:hover > a{
+    text-shadow: white!important;
+}
+
 p{
     color: #fff;
 }
