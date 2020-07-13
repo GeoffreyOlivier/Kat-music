@@ -59,6 +59,11 @@ class Article
      */
     private $commentaireArticles;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $Online;
+
 
 
 
@@ -177,6 +182,18 @@ class Article
                 $commentaireArticle->setArticle(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getOnline(): ?bool
+    {
+        return $this->Online;
+    }
+
+    public function setOnline(bool $Online): self
+    {
+        $this->Online = $Online;
 
         return $this;
     }

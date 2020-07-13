@@ -40,17 +40,30 @@
                                         </ul>
                                         <div class="entry-content">
                                             <p class="p-presentation">{{ event.presentation }}</p>
-                                            {% if not event.billeterie %}
-                                                <a class="button button-3d button-rounded button-leaf cursor_none" disabled="disabled">Gratuit</a>
-                                            {% elseif  event.billeterie %}
-                                                <a href="{{ event.billeterie|raw }}"
-                                                   onclick="window.open(this.href); return false;"
-                                                   class="button button-3d button-rounded button-blue"
-                                                   disabled="disabled">Billeterie</a>
-                                            {% endif %}
+                                            <div class="col-sm-4">
+                                                {% if event.map %}
+                                                    <a href="{{ event.map }}"
+                                                       onclick="window.open(this.href); return false;"
+                                                       class="button button-3d button-mini button-rounded button-blue"
+                                                       disabled="disabled">Voir sur la carte</a>
+                                                {% endif %}
+                                            </div>
+                                            <div class="col-sm-4">
+                                                {% if not event.billeterie %}
+                                                    <a class="button button-3d button-mini button-rounded button-leaf cursor_none"
+                                                       disabled="disabled">Gratuit</a>
+                                                {% elseif  event.billeterie %}
+                                                    <a href="{{ event.billeterie|raw }}"
+                                                       onclick="window.open(this.href); return false;"
+                                                       class="button button-3d button-mini button-rounded button-blue"
+                                                       disabled="disabled">Billeterie</a>
+                                                {% endif %}
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
+
                             {% endfor %}
                         </div>
                         <div class="sidebar nobottommargin col_last">
@@ -66,35 +79,39 @@
                                 <div class="widget clearfix">
                                     <div class="widget clearfix">
                                         <h4>Dernier articles</h4>
-                                    <div id="post-list-footer">
-                                        {% for article in articles %}
-                                            <div class="spost clearfix">
-                                                <div class="entry-image">
-                                                    <img src="{{ asset("imagesArticles/" ~ article.image) }}"
-                                                         class="petiteImage" alt="...">
-                                                </div>
-                                                <div class="entry-c">
-                                                    <div class="entry-title">
-                                                        <h4><a href="{{ path('article', {id: article.id }) }}">{{ article.titre }}</a></h4>
+                                        <div id="post-list-footer">
+                                            {% for article in articles %}
+                                                <div class="spost clearfix">
+                                                    <div class="entry-image">
+                                                        <img src="{{ asset("imagesArticles/" ~ article.image) }}"
+                                                             class="petiteImage" alt="...">
                                                     </div>
-                                                    <ul class="entry-meta">
-                                                        <li>{{ article.date|format_datetime('full','none',locale='fr') }}</li>
-                                                    </ul>
+                                                    <div class="entry-c">
+                                                        <div class="entry-title">
+                                                            <h4>
+                                                                <a href="{{ path('article', {id: article.id }) }}">{{ article.titre }}</a>
+                                                            </h4>
+                                                        </div>
+                                                        <ul class="entry-meta">
+                                                            <li>{{ article.date|format_datetime('full','none',locale='fr') }}</li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="widget clearfix">
+                                        <h4>Dernière vidéo</h4>
+                                        {% for lastvideo in lastvideos %}
+                                            {{ lastvideo.embed|raw }}
                                         {% endfor %}
                                     </div>
-                                </div>
-                                <div class="widget clearfix">
-                                    <h4>Dernière vidéo</h4>
-                                    {% for lastvideo in lastvideos %}
-                                        {{ lastvideo.embed|raw }}
-                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section><!-- #content end -->
+        </section>
+        <!-- #content end -->
     {% endblock %}

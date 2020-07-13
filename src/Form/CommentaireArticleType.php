@@ -16,7 +16,6 @@ class CommentaireArticleType extends AbstractType
             ->add('Pseudo')
             ->add('Email')
             ->add('Content', CKEditorType::class)
-
         ;
     }
 
