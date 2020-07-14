@@ -6,6 +6,7 @@ use App\Entity\Commentaire;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,7 +18,7 @@ class CommentaireType extends AbstractType
         $builder
             ->add('Pseudo')
             ->add('Email' )
-            ->add('Content')
+            ->add('Content',TextareaType::class)
             ->add('envoye',SubmitType::class)
         ;
     }

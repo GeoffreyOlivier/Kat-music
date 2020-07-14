@@ -176,15 +176,15 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\kat-musik.com\templates\security" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Kat-music\public\images\icons" />
       <recent name="C:\xampp\htdocs\Kat-music\templates\LiveAgenda" />
       <recent name="C:\xampp\htdocs\Kat-music\public\images_kat" />
       <recent name="C:\xampp\htdocs\Kat-music\public\images_kat\icon_commentaire" />
       <recent name="C:\xampp\htdocs\Kat-music\public\css\fonts" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\kat-musik.com\templates\security" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -223,7 +223,7 @@
       <workItem from="1594542115110" duration="6460000" />
       <workItem from="1594561815742" duration="13556000" />
       <workItem from="1594628772420" duration="14639000" />
-      <workItem from="1594721089858" duration="9627000" />
+      <workItem from="1594721089858" duration="15693000" />
     </task>
     <servers />
   </component>

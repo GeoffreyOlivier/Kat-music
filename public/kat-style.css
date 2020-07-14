@@ -486,7 +486,7 @@ a:hover { color: white;text-shadow: 0px 0px 3px #EB9C4D; }
 }
 .content-wrap-contact {
     position: relative;
-    padding: 30px 0;
+    padding: 0px 0;
 }
 .feature-box.fbox-bg.fbox-center {
     margin-top: 68px;
@@ -495,4 +495,6 @@ a:hover { color: white;text-shadow: 0px 0px 3px #EB9C4D; }
     border: 1px solid #E5E5E5;
     border-radius: 5px;
 }
-
+textarea.form-control {
+    height: 150px;
+}
