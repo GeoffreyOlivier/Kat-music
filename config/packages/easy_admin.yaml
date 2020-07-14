@@ -3,7 +3,7 @@ easy_admin:
     formats:
         time: 'h:i:s'
     entities:
-        News:
+        Article:
             class: App\Entity\Article
             list:
                 fields:
@@ -114,5 +114,5 @@ easy_admin:
         form_theme:
             - '@EasyAdmin/form/bootstrap_4.html.twig'
             - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
-    
+
 

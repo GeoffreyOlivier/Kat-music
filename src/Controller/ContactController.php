@@ -47,7 +47,7 @@ class ContactController extends AbstractController
             $mailer = new \Swift_Mailer($transport);
             $message = (new \Swift_Message('Nouveau contact'))
             ->setFrom($contact['email'])
-            ->setTo('yorikmoreau@gmail.com')
+            ->setTo('test.send.mail.dev@gmail.com')
             ->setBody(
                 $this->render('emails/contact.html.twig', [
                         'email' => $contact['email'],
@@ -61,8 +61,9 @@ class ContactController extends AbstractController
 
 
 //        affichage commentaire
-        $repo = $this->getDoctrine()->getRepository(Commentaire::class);
-        $comm = $repo->findAll();
+        $livreDorPair = $this->getDoctrine()->getRepository(Commentaire::class)->CommentairePair();
+        $livreDorImpair = $this->getDoctrine()->getRepository(Commentaire::class)->CommentaireImpair();
+
 
 //      ajout commentaire en base
         $commentaire = new Commentaire();
@@ -78,7 +79,8 @@ class ContactController extends AbstractController
         }
         return $this->render('index/contact.html.twig', [
             'controller_name' => 'MainController',
-            'commentaires' => $comm,
+            'livreDorPair' => $livreDorPair,
+            'livreDorImpair'=> $livreDorImpair,
             "formcom" => $formcom->createView(),
             "contactForm" => $form->createView()
 

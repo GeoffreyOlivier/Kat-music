@@ -1,6 +1,6 @@
 <?php
 
-    define('EMAIL','yorikmoreau@gmail.com');
-    define('PASS','Paviliong560!');
+    define('EMAIL','test.send.mail.dev@gmail.com');
+    define('PASS','AdminAdmin35');
 
 ?>
