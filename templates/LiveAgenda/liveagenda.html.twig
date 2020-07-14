@@ -40,10 +40,11 @@
                                         </ul>
                                         <div class="entry-content">
                                                 {% if event.map %}
-                                                    <a href="{{ event.map }}"
+                                                    {# <a href="{{ event.map }}"
                                                        onclick="window.open(this.href); return false;"
                                                        class="button button-3d button-mini button-rounded button-blue"
-                                                       disabled="disabled">Voir sur la carte</a>
+                                                       disabled="disabled">Voir sur la carte</a> #}
+                                                    <a href="https://maps.google.com/maps?q={{ event.map }}" data-lightbox="iframe" class="button button-3d button-mini button-rounded button-blue">Voir sur la carte</a>
                                                 {% endif %}
 
                                                 {% if not event.billeterie %}
