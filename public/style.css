@@ -609,7 +609,7 @@ span.middot {
 
 .col_full { width: 100%; }
 .col_half,
-.postcontent.bothsidebar { width: 48%; }
+.postcontent.bothsidebar { width: 45%; }
 .col_one_third { width: 30.63%; }
 .col_two_third { width: 65.33%; }
 .col_one_fourth,

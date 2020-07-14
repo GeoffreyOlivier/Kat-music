@@ -30,6 +30,23 @@ class CommentaireRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
+    public function CommentairePair()
+    {
+        return $this->createQueryBuilder('c')
+            ->where("mod(c.id,2) = 0")
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+    public function CommentaireImpair()
+    {
+        return $this->createQueryBuilder('c')
+            ->where("mod(c.id,2) = 1")
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
 
     public function CommentaireAccueil()
     {
