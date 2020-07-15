@@ -4,11 +4,6 @@
     background-color:#1a1a1a;
 }
 
-/*#primary-menu ul li > a {*/
-
-/*    font-family: ' Montserrat Subrayada', 'Finger Paint', cursive;*/
-
-/*}*/
 
 #primary-menu ul li > a {
     display: block;
@@ -17,7 +12,6 @@
     color: #fff;
     /*text-shadow: 0px 0px 2px rgb(255,255,255);*/
     font-weight: bold;
-    font-size: 29px;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-family: 'Raleway' , sans-serif;
@@ -108,6 +102,10 @@ a {
     font-weight: bold;
     font-size: 20px;
     /*text-shadow: 0px 0px 5px rgb(255, 255, 255);*/
+}
+
+.bottommargin-lg {
+    margin-bottom: 0px !important;
 }
 
 .entry-image img{
@@ -279,6 +277,17 @@ a {
     background-size: cover;
 }
 
+@media screen and (max-width: 974px) {
+
+    .img-bd-music {
+        height:300px;
+        padding: 17%;
+    }
+
+}
+
+
+
 
 
 /* ===================================================== Video ====================================== */
@@ -326,8 +335,24 @@ a {
         font-size: 50px;
         text-transform: uppercase;
     }
+
+    .img-bd-video{
+        height:300px;
+        padding: 17%;
+    }
 }
 /* ================================================ Live Agenda =================================*/
+
+@media screen and (max-width: 974px) {
+
+    .img-bd-live{
+        height:300px;
+        padding: 17%;
+    }
+
+}
+
+
 .img-bd-live{
     /* The image used */
     background-image: url("images_kat/bd-live.jpg");
@@ -354,6 +379,15 @@ a {
 }
 
 /* ===================================================== News ====================================*/
+
+@media screen and (max-width: 974px) {
+    .img-bd-news{
+        height:300px;
+        padding: 17%;
+    }
+
+}
+
 .img-bd-news{
     /* The image used */
     background-image: url("images_kat/bd-news.jpg");
@@ -452,6 +486,56 @@ a:hover { color: white;text-shadow: 0px 0px 3px #EB9C4D; }
 
 /*  ========================================== Contact ===================================== */
 
+@media screen and (max-width: 974px) {
+
+    #page-menu nav {
+        display: none;
+        position: absolute;
+        float: left;
+        width: 115%;
+        top: 50px;
+        left: 0px;
+        right: 15px;
+        height: auto;
+        background-color: #EB9C4D;
+        z-index: 11;
+    }
+    
+    body:not(.no-transition) #wrapper, .animsition-overlay {
+        position: fixed;
+        z-index: 150;
+        opacity: 0.9!important;
+    }
+    #page-menu, #page-menu-wrap {
+        position: fixed;
+        height: 50px;
+        top: 102px;
+        z-index: 149;
+        width:100%;
+    }
+
+    #livredor{
+        position: absolute;
+        top: 0px!important;
+    }
+    
+    #cahierdescharges{
+        position: absolute;
+        top: 1300px!important;
+    }
+    
+    #contactpro{
+        position: absolute;
+        top: 2500px!important;
+    }
+}
+
+@media screen and (min-width: 975px) {
+    
+
+}
+
+
 #page-menu.sticky-page-menu #page-menu-wrap {
     position: fixed;
     z-index: 99;
@@ -492,13 +576,76 @@ a:hover { color: white;text-shadow: 0px 0px 3px #EB9C4D; }
 }
 .feature-box.fbox-bg.fbox-center {
     margin-top: 68px;
-    padding: 50px 30px 30px;
     background-color: #1a1a1a;
     border: 1px solid #E5E5E5;
     border-radius: 5px;
+    margin-bottom: 48px;
+}
+
+#img_cahierdescharges{
+    height:400px;
 }
 textarea.form-control {
     height: 150px;
 }
 
+.headerContakt{
+    text-align: center;
+    padding: 2%;
+    background-color: #4b4b4b;
+    border: 1px solid black;
+    height:350px;
+}
+#headerLivreDor h1{
+    color:black;
+    margin:0;
+    text-shadow: 1px 2px 3px #d57f12;
+    font-family: 'Grenze Gotisch', cursive;
+}
+.img_header_contakt{
+    width:200px;
+    height:200px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
 
+@media screen and (min-width: 976px) and (max-width: 1183px) {
+    
+    #cahierdescharges{
+        position: absolute;
+        top: 1250px!important;
+    }
+    
+    #contactpro{
+        position: absolute;
+        top: 2300px!important;
+    }
+}
+
+#livredor{
+    position: absolute;
+    top: 150px;
+}
+
+#cahierdescharges{
+    position: absolute;
+    top: 1200px;
+}
+
+#contactpro{
+    position: absolute;
+    top: 2200px;
+}
+
+.dark #copyrights {
+    background-color: black;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+/*  ========================================== Footer ===================================== */
+
+.signature {
+    text-align: left;
+    display: inline;
+}
