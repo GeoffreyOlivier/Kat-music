@@ -40,9 +40,6 @@ class ContactController extends AbstractController
             ->setUsername(EMAIL)
             ->setPassword(PASS)
             ;
-
-
-
             $contact = $form->getData();
             $mailer = new \Swift_Mailer($transport);
             $message = (new \Swift_Message('Nouveau contact'))
@@ -58,8 +55,6 @@ class ContactController extends AbstractController
             $this->addFlash('success','Le message à bien été envoyé');
             return $this->redirectToRoute('contact');
         }
-
-
 //        affichage commentaire
         $livreDorPair = $this->getDoctrine()->getRepository(Commentaire::class)->CommentairePair();
         $livreDorImpair = $this->getDoctrine()->getRepository(Commentaire::class)->CommentaireImpair();

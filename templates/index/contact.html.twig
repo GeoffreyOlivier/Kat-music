@@ -18,7 +18,7 @@
 
                     <nav>
                         <ul>
-                            
+
                             <li id="titre_LivreDor" class="current"><a href="{{ path('contact') }}#livredor">
                                     <div>Livre D'or</div>
                                 </a></li>
@@ -39,7 +39,7 @@
 
         </div><!-- #page-menu end -->
 
-        
+
         <!--============================================= Livre d'or + formulaire ============================================= -->
         <div id="livredor"></div>
         <section class="headerContakt">
@@ -222,7 +222,37 @@
                         </div>
                         <div class="form-widget">
                             <div class="form-result"></div>
-                                {{ form(contactForm) }}
+                            {{ form_start(contactForm) }}
+                            <div class="col_half">
+                                <label for="template-contactform-name">Name <small>*</small></label>
+                                {{ form_widget (contactForm.nom) }}
+                            </div>
+
+                            <div class="col_half">
+                                <label for="template-contactform-email">Email <small>*</small></label>
+                                {{ form_widget (contactForm.email) }}
+                            </div>
+                            <div class="clear"></div>
+
+                            <div class="col_full">
+                                <label for="template-contactform-message">Message <small>*</small></label>
+                                {{ form_widget (contactForm.message) }}
+                            </div>
+
+                            <div class="col_full hidden">
+                                {{ form_widget (contactForm.envoyer) }}
+                            </div>
+
+                            <div class="col_full">
+                                <button name="submit" type="submit" id="submit-button" tabindex="5" value="Submit"
+                                        class="button button-3d button-amber">Publier
+                                </button>
+                            </div>
+
+                            <input type="hidden" name="prefix" value="template-contactform-">
+
+
+                            {{ form_end(contactForm) }}
                         </div>
                     </div>
                     <!-- =============================== Contact Form End =========================================================-->
