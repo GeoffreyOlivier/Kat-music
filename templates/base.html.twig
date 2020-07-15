@@ -17,6 +17,7 @@
         {% block stylesheets %}
             <link rel="icon" type="image/png" href="{{ asset('images_kat/Logo_Kat.png') }}">
             <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="text/css"/>
+            <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@900&display=swap" rel="stylesheet"> 
             <link rel="stylesheet" href="{{ asset("css/bootstrap.css") }}" type="text/css"/>
             <link rel="stylesheet" href="{{ asset("style.css") }}" type="text/css"/>
             <link rel="stylesheet" href="{{ asset("css/dark.css") }}" type="text/css"/>
@@ -49,7 +50,7 @@
                     ============================================= -->
                     <div id="logo">
                         <a href="{{ path('index') }}" class="standard-logo" data-dark-logo="{{ asset('images_kat/Logo_Kat.png') }}"><img src="{{ asset('images_kat/Logo_Kat1.png') }}" alt="Canvas Logo"></a>
-                        <a href="{{ path('index') }}" class="retina-logo" data-dark-logo="{{ asset('images/logo-dark@2x.png') }}"><img src="{{ asset('images/logo@2x.png') }}" alt="Canvas Logo"></a>
+                        <a href="{{ path('index') }}" class="retina-logo" data-dark-logo="{{ asset('images_kat/Logo_Kat.png') }}"><img src="{{ asset('images_kat/Logo_Kat1.png') }}" alt="Canvas Logo"></a>
                     </div><!-- #logo end -->
                     <!-- Primary Navigation
                     ============================================= -->
@@ -112,7 +113,72 @@
         </div>
     {% endfor %}
     {% block body %}{% endblock %}
-<footer>
+<footer id="" class="dark">
+
+    <!-- Copyrights
+    ============================================= -->
+    <div id="copyrights">
+        <div class="container">
+
+            <div class="row col-mb-30">
+
+                <div class="col-md-6 text-center text-md-left">
+                    Copyrights © 2020 All Rights Reserved by Canvas Inc.<br>
+                    <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+                </div>
+
+                <div class="col-md-6 text-center text-md-right">
+                    <div class="d-flex justify-content-center justify-content-md-end">
+                        <a href="#" class="social-icon si-small si-borderless si-facebook">
+                            <i class="icon-facebook"></i>
+                            <i class="icon-facebook"></i>
+                        </a>
+
+                        <a href="#" class="social-icon si-small si-borderless si-twitter">
+                            <i class="icon-twitter"></i>
+                            <i class="icon-twitter"></i>
+                        </a>
+
+                        <a href="#" class="social-icon si-small si-borderless si-gplus">
+                            <i class="icon-gplus"></i>
+                            <i class="icon-gplus"></i>
+                        </a>
+
+                        <a href="#" class="social-icon si-small si-borderless si-pinterest">
+                            <i class="icon-pinterest"></i>
+                            <i class="icon-pinterest"></i>
+                        </a>
+
+                        <a href="#" class="social-icon si-small si-borderless si-vimeo">
+                            <i class="icon-vimeo"></i>
+                            <i class="icon-vimeo"></i>
+                        </a>
+
+                        <a href="#" class="social-icon si-small si-borderless si-github">
+                            <i class="icon-github"></i>
+                            <i class="icon-github"></i>
+                        </a>
+
+                        <a href="#" class="social-icon si-small si-borderless si-yahoo">
+                            <i class="icon-yahoo"></i>
+                            <i class="icon-yahoo"></i>
+                        </a>
+
+                        <a href="#" class="social-icon si-small si-borderless si-linkedin">
+                            <i class="icon-linkedin"></i>
+                            <i class="icon-linkedin"></i>
+                        </a>
+                    </div>
+
+                    <div class="clear"></div>
+
+                    <h6 class="signature">Développeurs:</h6><span class="middot">Yorikmoreau@gmail.com</span>/<span class="middot"></span>
+                </div>
+
+            </div>
+
+        </div>
+    </div><!-- #copyrights end -->
 
 </footer>
 

@@ -18,7 +18,7 @@ class CommentaireType extends AbstractType
         $builder
             ->add('Pseudo')
             ->add('Email' )
-            ->add('Content',TextareaType::class)
+            ->add('Content',TextareaType::class, ['attr' => ['maxlength' => 280]])
             ->add('envoye',SubmitType::class)
         ;
     }
