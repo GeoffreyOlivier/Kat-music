@@ -486,7 +486,7 @@ a:hover { color: white;text-shadow: 0px 0px 3px #EB9C4D; }
 
 /*  ========================================== Contact ===================================== */
 
-@media screen and (max-width: 974px) {
+@media screen and (max-width: 975px) {
 
     #page-menu nav {
         display: none;
@@ -521,18 +521,41 @@ a:hover { color: white;text-shadow: 0px 0px 3px #EB9C4D; }
     
     #cahierdescharges{
         position: absolute;
-        top: 1300px!important;
+        top: 1305px!important;
     }
     
     #contactpro{
         position: absolute;
-        top: 2500px!important;
+        top: 2510px!important;
     }
 }
 
-@media screen and (min-width: 975px) {
+@media screen and (min-width: 976px) and (max-width: 1183px) {
     
+    #cahierdescharges{
+        position: absolute;
+        top: 1255px!important;
+    }
+    
+    #contactpro{
+        position: absolute;
+        top: 2315px!important;
+    }
+}
 
+#livredor{
+    position: absolute;
+    top: 150px;
+}
+
+#cahierdescharges{
+    position: absolute;
+    top: 1225px;
+}
+
+#contactpro{
+    position: absolute;
+    top: 2250px;
 }
 
 
@@ -609,33 +632,6 @@ textarea.form-control {
     border: 1px solid black;
 }
 
-@media screen and (min-width: 976px) and (max-width: 1183px) {
-    
-    #cahierdescharges{
-        position: absolute;
-        top: 1250px!important;
-    }
-    
-    #contactpro{
-        position: absolute;
-        top: 2300px!important;
-    }
-}
-
-#livredor{
-    position: absolute;
-    top: 150px;
-}
-
-#cahierdescharges{
-    position: absolute;
-    top: 1200px;
-}
-
-#contactpro{
-    position: absolute;
-    top: 2200px;
-}
 
 .dark #copyrights {
     background-color: black;
