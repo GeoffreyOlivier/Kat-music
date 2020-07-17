@@ -216,19 +216,19 @@ a {
     }
 }
 
-.nobottommargin h1{
-    text-shadow: 0px 0px 3px #EB9C4D;
-}
+/*.nobottommargin h1{*/
+/*    text-shadow: 0px 0px 3px #EB9C4D;*/
+/*}*/
 
 
-.nobottommargin span{
-    font-size: 22px;
-    display: block;
-    margin-top: 10px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.7);
-    text-shadow: 0px 0px 3px #EB9C4D;
-}
+/*.nobottommargin span{*/
+/*    font-size: 22px;*/
+/*    display: block;*/
+/*    margin-top: 10px;*/
+/*    font-weight: 300;*/
+/*    color: rgba(255,255,255,0.7);*/
+/*    text-shadow: 0px 0px 3px #EB9C4D;*/
+/*}*/
 
 .testi-content p{
     color:black;
@@ -500,7 +500,7 @@ a:hover { color: white;text-shadow: 0px 0px 3px #EB9C4D; }
         background-color: #EB9C4D;
         z-index: 11;
     }
-    
+
     body:not(.no-transition) #wrapper, .animsition-overlay {
         position: fixed;
         z-index: 150;
@@ -518,12 +518,12 @@ a:hover { color: white;text-shadow: 0px 0px 3px #EB9C4D; }
         position: absolute;
         top: 0px!important;
     }
-    
+
     #cahierdescharges{
         position: absolute;
         top: 1300px!important;
     }
-    
+
     #contactpro{
         position: absolute;
         top: 2500px!important;
@@ -531,7 +531,7 @@ a:hover { color: white;text-shadow: 0px 0px 3px #EB9C4D; }
 }
 
 @media screen and (min-width: 975px) {
-    
+
 
 }
 
@@ -610,12 +610,12 @@ textarea.form-control {
 }
 
 @media screen and (min-width: 976px) and (max-width: 1183px) {
-    
+
     #cahierdescharges{
         position: absolute;
         top: 1250px!important;
     }
-    
+
     #contactpro{
         position: absolute;
         top: 2300px!important;

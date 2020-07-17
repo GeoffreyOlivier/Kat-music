@@ -167,7 +167,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../acme" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -225,6 +225,7 @@
       <workItem from="1594628772420" duration="14639000" />
       <workItem from="1594721089858" duration="15693000" />
       <workItem from="1594807384315" duration="1085000" />
+      <workItem from="1594922149627" duration="1641000" />
     </task>
     <servers />
   </component>
@@ -259,10 +260,10 @@
     </state>
     <state x="-1382" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/62.0.1986.1152/-1842.0.1458.864@-1842.0.1458.864" timestamp="1593779502619" />
     <state x="689" y="249" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/62.0.1986.1152/-1842.0.1458.864@62.0.1986.1152" timestamp="1594130651510" />
-    <state x="744" y="334" key="FileChooserDialogImpl" timestamp="1594559329062">
+    <state x="744" y="334" key="FileChooserDialogImpl" timestamp="1594922154911">
       <screen x="62" y="0" width="1986" height="1152" />
     </state>
-    <state x="744" y="334" key="FileChooserDialogImpl/62.0.1986.1152/-1842.0.1458.864@62.0.1986.1152" timestamp="1594559329062" />
+    <state x="744" y="334" key="FileChooserDialogImpl/62.0.1986.1152/-1842.0.1458.864@62.0.1986.1152" timestamp="1594922154911" />
     <state x="386" y="99" key="SettingsEditor" timestamp="1594395567296">
       <screen x="62" y="0" width="1986" height="1152" />
     </state>

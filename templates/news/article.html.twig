@@ -54,10 +54,8 @@
 
 
                             <div class="divider divider-rounded divider-right"><i class="icon-chat"></i></div>
-                            <!-- Comments List
-                            ============================================= -->
-                            <h3 class="comments-title"><span>{{ countvalide|length }}</span>
-                                Commentaires</h3>
+                            <!-- ======================================== Comments List============================================= -->
+                            <h3 class="comments-title"><span>{{ countvalide|length }}</span> Commentaires</h3>
 
                             {% for commentaireArticle in article.commentaireArticles %}
                             {% if commentaireArticle.valide == 1 %}
