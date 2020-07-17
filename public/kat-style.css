@@ -486,7 +486,7 @@ a:hover { color: white;text-shadow: 0px 0px 3px #EB9C4D; }
 
 /*  ========================================== Contact ===================================== */
 
-@media screen and (max-width: 974px) {
+@media screen and (max-width: 975px) {
 
     #page-menu nav {
         display: none;
@@ -521,18 +521,43 @@ a:hover { color: white;text-shadow: 0px 0px 3px #EB9C4D; }
 
     #cahierdescharges{
         position: absolute;
-        top: 1300px!important;
+        top: 1480px!important;
     }
 
     #contactpro{
         position: absolute;
-        top: 2500px!important;
+        top: 2775px!important;
     }
 }
 
 @media screen and (min-width: 975px) {
+@media screen and (min-width: 976px) and (max-width: 1183px) {
+    
+    #cahierdescharges{
+        position: absolute;
+        top: 1050px!important;
+    }
+    
+    #contactpro{
+        position: absolute;
+        top: 2315px!important;
+    }
+}
 
 
+#livredor{
+    position: absolute;
+    top: 150px;
+}
+
+#cahierdescharges{
+    position: absolute;
+    top: 1040px;
+}
+
+#contactpro{
+    position: absolute;
+    top: 1840px;
 }
 
 
@@ -573,7 +598,14 @@ a:hover { color: white;text-shadow: 0px 0px 3px #EB9C4D; }
 .content-wrap-contact {
     position: relative;
     padding: 0px 0;
+    margin-bottom: 4%;
 }
+
+.content-wrap-contact ul {
+    list-style: none;
+    text-align: left;
+}
+
 .feature-box.fbox-bg.fbox-center {
     margin-top: 68px;
     background-color: #1a1a1a;
@@ -590,23 +622,11 @@ textarea.form-control {
 }
 
 .headerContakt{
+    padding: 1%;
     text-align: center;
-    padding: 2%;
     background-color: #4b4b4b;
     border: 1px solid black;
-    height:350px;
-}
-#headerLivreDor h1{
-    color:black;
-    margin:0;
-    text-shadow: 1px 2px 3px #d57f12;
-    font-family: 'Grenze Gotisch', cursive;
-}
-.img_header_contakt{
-    width:200px;
-    height:200px;
-    border-radius: 50%;
-    border: 1px solid black;
+    height:100px;
 }
 
 @media screen and (min-width: 976px) and (max-width: 1183px) {
@@ -620,22 +640,17 @@ textarea.form-control {
         position: absolute;
         top: 2300px!important;
     }
+.headerContakt h1{
+    display:inline;
 }
 
-#livredor{
-    position: absolute;
-    top: 150px;
+.img_header_contakt{
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    display: inline-block;
 }
 
-#cahierdescharges{
-    position: absolute;
-    top: 1200px;
-}
-
-#contactpro{
-    position: absolute;
-    top: 2200px;
-}
 
 .dark #copyrights {
     background-color: black;

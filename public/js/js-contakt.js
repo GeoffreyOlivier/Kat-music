@@ -1,23 +1,4 @@
 
-
-        // $(window).on('scroll', function () {
-        //    var scrollTop = $(window).scrollTop(),
-        //      sticky = $('#page-menu-mobile').offset().top;
-        //     if (scrollTop > sticky ) {
-        //         $( "#page-menu-mobile" ).addClass( "sticky-mobile" );
-        //     } 
-        //     else {
-        //         $( "#page-menu-mobile" ).removeClass( "sticky-mobile" );
-        //     }
-        
-        // });
-
-
-
-
-
-
-
 // // Get Menu titles
 var LivreDor_title = document.getElementById("titre_LivreDor");
 var CahierDesCharges_title = document.getElementById("titre_CahierDesCharges");
