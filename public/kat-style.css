@@ -260,6 +260,13 @@ a {
     object-fit: cover;
 }
 
+#page-title.page-title-parallax {
+    background-color: black;
+    background-attachment: fixed;
+    background-position: 50% 0 !important;
+    background-repeat: no-repeat;
+}
+
 
 /* ===================================================== Music ====================================== */
 
