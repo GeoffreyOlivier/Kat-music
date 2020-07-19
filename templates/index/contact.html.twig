@@ -43,7 +43,8 @@
         <!--============================================= Livre d'or + formulaire ============================================= -->
         <div id="livredor"></div>
         <section class="headerContakt">
-            <img src="https://img.icons8.com/color/48/000000/open-book.png" class="img-fluid img_header_contakt" alt="Livre d'or"/>
+            <img src="https://img.icons8.com/color/48/000000/open-book.png" class="img-fluid img_header_contakt"
+                 alt="Livre d'or"/>
             <h1>Livre D'or</h1>
         </section>
         <section id="content">
@@ -56,44 +57,49 @@
                     <div class="col_half">
 
                         <div class="fancy-title title-dotted-border">
-                            <h3 >Participer au livre d'or</h3>
+                            <h3>Participer au livre d'or</h3>
                         </div>
 
                         <div class="">
 
 
-                            {{ form_start(formcom) }}
+                            {{ form_start(formcom, {'attr': {'id': 'demo-form'}}) }}
 
 
-                                <div class="form-process"></div>
+                            <div class="form-process"></div>
 
-                                <div class="col_half">
-                                    <label for="template-contactform-name">Name <small>*</small></label>
-                                    {{ form_widget (formcom.Pseudo) }}
-                                </div>
+                            <div class="col_half">
+                                <label for="template-contactform-name">Name <small>*</small></label>
+                                {{ form_widget (formcom.Pseudo) }}
+                            </div>
 
-                                <div class="col_half">
-                                    <label for="template-contactform-email">Email <small>*</small></label>
-                                    {{ form_widget (formcom.Email) }}
-                                </div>
-                                <div class="clear"></div>
+                            <div class="col_half">
+                                <label for="template-contactform-email">Email <small>*</small></label>
+                                {{ form_widget (formcom.Email) }}
+                            </div>
+                            <div class="clear"></div>
 
-                                <div class="col_full">
-                                    <label for="template-contactform-message">Message <small>*</small></label>
-                                    {{ form_widget (formcom.Content) }}
-                                </div>
+                            <div class="col_full">
+                                <label for="template-contactform-message">Message <small>*</small></label>
+                                {{ form_widget (formcom.Content) }}
+                            </div>
 
-                                <div class="col_full hidden">
-                                    {{ form_widget (formcom.envoye) }}
-                                </div>
+                            <div class="col_full hidden">
+                                {{ form_widget (formcom.envoye) }}
+                            </div>
 
-                                <div class="col_full">
-                                    <button name="submit" type="submit" id="submit-button" tabindex="5" value="Submit"
-                                            class="button button-3d button-amber">Publier
-                                    </button>
-                                </div>
+                            <div class="col_full">
+                                <button class="g-recaptcha button button-3d button-small button-rounded button-amber"
+                                        data-callback='onSubmit'
+                                        data-action='submit'
+                                        tabindex="5"
+                                        value="Submit"
+                                        data-sitekey="6Leo2q8ZAAAAAH09pfMhBNaCIT2KoTpXEyVJ1TmW"
+                                >Publier
+                                </button>
+                            </div>
 
-                                <input type="hidden" name="prefix" value="template-contactform-">
+                            <input type="hidden" name="prefix" value="template-contactform-">
 
 
                             {{ form_end(formcom) }}
@@ -166,20 +172,21 @@
         <!-- =============================== Cachier des charges =================================================-->
         <div id="cahierdescharges"></div>
         <section class="headerContakt">
-            <img src="https://img.icons8.com/dotty/80/000000/sheet-of-paper.png" class="img-fluid img_header_contakt" alt="fiche technique"/>
+            <img src="https://img.icons8.com/dotty/80/000000/sheet-of-paper.png" class="img-fluid img_header_contakt"
+                 alt="fiche technique"/>
             <h1>Fiche Technique</h1>
         </section>
-        <section id="content" >
+        <section id="content">
 
-            <div class="content-wrap-contact" >
+            <div class="content-wrap-contact">
 
                 <div class="container clearfix feature-box fbox-center fbox-bg fbox-plain">
-                <div class="col_half">
-                    <img id="img_cahierdescharges" src="images_kat/Kat_enjoy.jpg" alt="Standard Post with Image">
-                </div>
-                <div class="col_half">
-                    <h4 id="CahierDesCharges">Cahier des charges</h4>
-                    <span>
+                    <div class="col_half">
+                        <img id="img_cahierdescharges" src="images_kat/Kat_enjoy.jpg" alt="Standard Post with Image">
+                    </div>
+                    <div class="col_half">
+                        <h4 id="CahierDesCharges">Cahier des charges</h4>
+                        <span>
                     <ul>
                         <li>Spectacle : Durée 50 min</li>
 
@@ -201,15 +208,16 @@
                     </ul>
                     </span>
 
+                    </div>
                 </div>
-            </div>
             </div>
             <div id="CahierDesChargesTrigger"></div>
         </section>
         <!-- =============================== Fin cachier des charges =================================================-->
         <div id="contactpro"></div>
         <section class="headerContakt">
-            <img src="https://img.icons8.com/fluent/48/000000/new-contact.png" class="img-fluid img_header_contakt" alt="contact pro"/>
+            <img src="https://img.icons8.com/fluent/48/000000/new-contact.png" class="img-fluid img_header_contakt"
+                 alt="contact pro"/>
             <h1>Contact Professionnel</h1>
         </section>
         <section id="content">
@@ -222,7 +230,7 @@
                         </div>
                         <div class="form-widget">
                             <div class="form-result"></div>
-                            {{ form_start(contactForm) }}
+                            {{ form_start(contactForm, {'attr': {'id': 'demo-form'}}) }}
                             <div class="col_half">
                                 <label for="template-contactform-name">Name <small>*</small></label>
                                 {{ form_widget (contactForm.nom) }}
@@ -242,16 +250,17 @@
                             <div class="col_full hidden">
                                 {{ form_widget (contactForm.envoyer) }}
                             </div>
-
                             <div class="col_full">
-                                <button name="submit" type="submit" id="submit-button" tabindex="5" value="Submit"
-                                        class="button button-3d button-amber">Publier
+                                <button class="g-recaptcha button button-3d button-small button-rounded button-amber"
+                                        data-callback='onSubmit'
+                                        data-action='submit'
+                                        tabindex="5"
+                                        value="Submit"
+                                        data-sitekey="6Leo2q8ZAAAAAH09pfMhBNaCIT2KoTpXEyVJ1TmW"
+                                >Publier
                                 </button>
                             </div>
-
                             <input type="hidden" name="prefix" value="template-contactform-">
-
-
                             {{ form_end(contactForm) }}
                         </div>
                     </div>

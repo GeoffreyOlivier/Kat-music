@@ -156,6 +156,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/google-mailer" />
       <path value="$PROJECT_DIR$/vendor/twig/intl-extra" />
       <path value="$PROJECT_DIR$/vendor/google/recaptcha" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
     </include_path>
   </component>
   <component name="ProjectId" id="1dOrTDyy0ybfymeMGiF7qHcHwfK" />
@@ -226,6 +228,11 @@
       <workItem from="1594721089858" duration="15693000" />
       <workItem from="1594807384315" duration="1085000" />
       <workItem from="1594922149627" duration="1641000" />
+      <workItem from="1595001136866" duration="795000" />
+      <workItem from="1595063885280" duration="5457000" />
+      <workItem from="1595075937872" duration="720000" />
+      <workItem from="1595150343956" duration="6536000" />
+      <workItem from="1595161967581" duration="2701000" />
     </task>
     <servers />
   </component>
@@ -255,11 +262,11 @@
       <screen x="-1842" y="0" width="1458" height="864" />
     </state>
     <state x="-1467" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/62.0.1986.1152/-1842.0.1458.864@-1842.0.1458.864" timestamp="1593881151366" />
-    <state x="689" y="249" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1594130651510">
+    <state x="689" y="249" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1595156613760">
       <screen x="62" y="0" width="1986" height="1152" />
     </state>
     <state x="-1382" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/62.0.1986.1152/-1842.0.1458.864@-1842.0.1458.864" timestamp="1593779502619" />
-    <state x="689" y="249" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/62.0.1986.1152/-1842.0.1458.864@62.0.1986.1152" timestamp="1594130651510" />
+    <state x="689" y="249" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/62.0.1986.1152/-1842.0.1458.864@62.0.1986.1152" timestamp="1595156613760" />
     <state x="744" y="334" key="FileChooserDialogImpl" timestamp="1594922154911">
       <screen x="62" y="0" width="1986" height="1152" />
     </state>

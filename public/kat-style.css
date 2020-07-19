@@ -58,13 +58,13 @@ a {
 }
 
 
- /* ====================================== message ========================================*/
+/* ====================================== message ========================================*/
 .style-msg, .style-msg2 {
     position: relative;
     display: block;
     color: #444;
     border-left: 4px solid rgba(0,0,0,0.1);
-     margin-bottom: 0px;
+    margin-bottom: 0px;
 }
 .successmsg {
     background: #83f678;
@@ -201,7 +201,7 @@ a {
 .bd-accueil{
     /* The image used */
     background-image: url("images_kat/kat_background.jpg");
-        /* Create the parallax scrolling effect */
+    /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -216,19 +216,19 @@ a {
     }
 }
 
-/*.nobottommargin h1{*/
-/*    text-shadow: 0px 0px 3px #EB9C4D;*/
-/*}*/
+.nobottommargin-accueil h1{
+    text-shadow: 0px 0px 3px #EB9C4D;
+}
 
 
-/*.nobottommargin span{*/
-/*    font-size: 22px;*/
-/*    display: block;*/
-/*    margin-top: 10px;*/
-/*    font-weight: 300;*/
-/*    color: rgba(255,255,255,0.7);*/
-/*    text-shadow: 0px 0px 3px #EB9C4D;*/
-/*}*/
+.nobottommargin-accueil span{
+    font-size: 22px;
+    display: block;
+    margin-top: 10px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    text-shadow: 0px 0px 3px #EB9C4D;
+}
 
 .testi-content p{
     color:black;
@@ -245,7 +245,7 @@ a {
     left: 0px;
     content: "◤";
     display: block;
-  }
+}
 
 .testimonial {
     background-color: #4b4b4b;
@@ -530,20 +530,18 @@ a:hover { color: white;text-shadow: 0px 0px 3px #EB9C4D; }
     }
 }
 
-@media screen and (min-width: 975px) {
 @media screen and (min-width: 976px) and (max-width: 1183px) {
-    
+
     #cahierdescharges{
         position: absolute;
         top: 1050px!important;
     }
-    
+
     #contactpro{
         position: absolute;
         top: 2315px!important;
     }
 }
-
 
 #livredor{
     position: absolute;
@@ -570,7 +568,7 @@ a:hover { color: white;text-shadow: 0px 0px 3px #EB9C4D; }
     top: 60px;
 }
 .fancy-title.title-dotted-border {
-     background: none;
+    background: none;
 }
 .fancy-title h1, .fancy-title h2, .fancy-title h3, .fancy-title h4, .fancy-title h5, .fancy-title h6 {
     position: relative;
@@ -629,17 +627,6 @@ textarea.form-control {
     height:100px;
 }
 
-@media screen and (min-width: 976px) and (max-width: 1183px) {
-
-    #cahierdescharges{
-        position: absolute;
-        top: 1250px!important;
-    }
-
-    #contactpro{
-        position: absolute;
-        top: 2300px!important;
-    }
 .headerContakt h1{
     display:inline;
 }
@@ -663,4 +650,17 @@ textarea.form-control {
 .signature {
     text-align: left;
     display: inline;
+}
+/*  ========================================== Pagination ===================================== */
+
+.btn-link, .page-link, .page-link:hover, .page-link:focus {
+    color: #EB9C4D;
+}
+.page-item.active .page-link, .page-link:hover, .page-link:focus {
+    color: #FFF !important;
+    background-color: #EB9C4D !important;
+    border-color: #EB9C4D !important;
+}
+.pagination{
+    justify-content: center;
 }
