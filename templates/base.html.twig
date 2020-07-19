@@ -6,12 +6,6 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <meta name="author" content="SemiColonWeb"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <script src="https://www.google.com/recaptcha/api.js"></script>
-        <script>
-            function onSubmit(token) {
-                document.getElementById("demo-form").submit();
-            }
-        </script>
 
         <!-- Document stylesheets
             ============================================= -->
@@ -113,6 +107,7 @@
         </div>
     {% endfor %}
     {% block body %}{% endblock %}
+
 <footer id="" class="dark">
 
     <!-- Copyrights
@@ -194,6 +189,9 @@
     <script src="{{ asset('js/feuille.js') }}"></script>
     <!-- Footer Scripts
     ============================================= -->
+    <script src="https://www.google.com/recaptcha/api.js">
+    </script>
+
     <script src="{{ asset('js/functions.js') }}"></script>
     <script src="{{ asset('js/js-contakt.js') }}"></script>
 
