@@ -26,7 +26,9 @@
                             {{ video.embed|raw }}
 
                             <div class="divider divider-right"><i class="icon-heart"></i></div>
+
                         {% endfor %}
+                        {{ knp_pagination_render(videos) }}
                     </div><!-- .postcontent end -->
                     <!-- Sidebar
                     ============================================= -->
