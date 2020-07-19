@@ -32,4 +32,34 @@ $(window).on('scroll', function () {
     }
 
 });
+            function onSubmit() {
+                
 
+                var CaptchaCallback = function() {
+                    var captchas = document.getElementById("send_cap");
+                    grecaptcha.render(captchas, {'sitekey' : '6Leo2q8ZAAAAAH09pfMhBNaCIT2KoTpXEyVJ1TmW'});
+                };
+                document.getElementById("demo-form").submit();
+                // document.getElementById("demo-form2").submit();
+                // document.getElementById("demo-form3").submit();
+
+            }
+
+            function onSubmit2() {
+                
+                var CaptchaCallback = function() {
+                    var captchas = document.getElementById("send_cap2");
+                    grecaptcha.render(captchas, {'sitekey' : '6Leo2q8ZAAAAAH09pfMhBNaCIT2KoTpXEyVJ1TmW'});
+                };
+                document.getElementById("demo-form2").submit();
+                // alert('ok');
+            }
+
+            function onSubmit3() {
+                
+                var CaptchaCallback = function() {
+                    var captchas = document.getElementById("send_cap3");
+                    grecaptcha.render(captchas, {'sitekey' : '6Leo2q8ZAAAAAH09pfMhBNaCIT2KoTpXEyVJ1TmW'});
+                };
+                document.getElementById("demo-form3").submit();
+            }

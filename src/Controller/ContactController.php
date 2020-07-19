@@ -37,6 +37,7 @@ class ContactController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $recaptcha = new ReCaptcha('6Leo2q8ZAAAAANnLnk8qBW4ScLQYlan_fUj-n8jb');
             $resp = $recaptcha->verify($request->request->get('g-recaptcha-response'), $request->getClientIp());
+            dd($resp);
             if ($resp->isSuccess()) {
                 require_once '../mailer.php';
                 $transport = (new \Swift_SmtpTransport('smtp.gmail.com', 587, 'tls'))
@@ -70,6 +71,7 @@ class ContactController extends AbstractController
         if ($formcom->isSubmitted() && $formcom->isValid()) {
             $recaptcha = new ReCaptcha('6Leo2q8ZAAAAANnLnk8qBW4ScLQYlan_fUj-n8jb');
             $resp2 = $recaptcha->verify($request->request->get('g-recaptcha-response'), $request->getClientIp());
+            dd($resp2);
             if ($resp2->isSuccess()) {
                 $em->persist($commentaire);
                 $em->flush();

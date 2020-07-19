@@ -66,6 +66,7 @@ class NewsController extends AbstractController
         if ($commentForm->isSubmitted() && $commentForm->isValid()){
             $recaptcha = new ReCaptcha('6Leo2q8ZAAAAANnLnk8qBW4ScLQYlan_fUj-n8jb');
             $resp = $recaptcha->verify($request->request->get('g-recaptcha-response'), $request->getClientIp());
+            dd($resp);
             if($resp->isSuccess()){
                 $CommentaireArticle->setArticle($article);
                 $this->addFlash('success','Le commentaire à bien été envoyé, il seras traité au plus vite');
