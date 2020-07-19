@@ -9,6 +9,7 @@ use App\Form\CommentaireType;
 use App\Form\ContactType;
 use Doctrine\ORM\EntityManagerInterface;
 use Exception;
+use ReCaptcha\ReCaptcha;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\Annotation\Route;
@@ -27,33 +28,35 @@ class ContactController extends AbstractController
      * @return RedirectResponse|Response
      * @throws Exception
      */
-    public function Contact(Request $request, EntityManagerInterface $em )
+    public function Contact(Request $request, EntityManagerInterface $em)
     {
 
 //        envoyer mail
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-
-            require_once '../mailer.php';
-            $transport = (new \Swift_SmtpTransport('smtp.gmail.com',587,'tls'))
-            ->setUsername(EMAIL)
-            ->setPassword(PASS)
-            ;
-            $contact = $form->getData();
-            $mailer = new \Swift_Mailer($transport);
-            $message = (new \Swift_Message('Nouveau contact'))
-            ->setFrom($contact['email'])
-            ->setTo('test.send.mail.dev@gmail.com')
-            ->setBody(
-                $this->render('emails/contact.html.twig', [
-                        'email' => $contact['email'],
-                        'message' => $contact['message'],
-                        'nom' => $contact['nom']
-                ]));
-            $mailer->send($message);
-            $this->addFlash('success','Le message à bien été envoyé');
-            return $this->redirectToRoute('contact');
+            $recaptcha = new ReCaptcha('6Leo2q8ZAAAAANnLnk8qBW4ScLQYlan_fUj-n8jb');
+            $resp = $recaptcha->verify($request->request->get('g-recaptcha-response'), $request->getClientIp());
+            if ($resp->isSuccess()) {
+                require_once '../mailer.php';
+                $transport = (new \Swift_SmtpTransport('smtp.gmail.com', 587, 'tls'))
+                    ->setUsername(EMAIL)
+                    ->setPassword(PASS);
+                $contact = $form->getData();
+                $mailer = new \Swift_Mailer($transport);
+                $message = (new \Swift_Message('Nouveau contact'))
+                    ->setFrom($contact['email'])
+                    ->setTo('test.send.mail.dev@gmail.com')
+                    ->setBody(
+                        $this->render('emails/contact.html.twig', [
+                            'email' => $contact['email'],
+                            'message' => $contact['message'],
+                            'nom' => $contact['nom']
+                        ]));
+                $mailer->send($message);
+                $this->addFlash('success', 'Le message à bien été envoyé');
+                return $this->redirectToRoute('news');
+            }
         }
 //        affichage commentaire
         $livreDorPair = $this->getDoctrine()->getRepository(Commentaire::class)->CommentairePair();
@@ -63,19 +66,22 @@ class ContactController extends AbstractController
 //      ajout commentaire en base
         $commentaire = new Commentaire();
         $formcom = $this->createForm(CommentaireType::class, $commentaire);
-
         $formcom->handleRequest($request);
         if ($formcom->isSubmitted() && $formcom->isValid()) {
-            $em->persist($commentaire);
-            $em->flush();
+            $recaptcha = new ReCaptcha('6Leo2q8ZAAAAANnLnk8qBW4ScLQYlan_fUj-n8jb');
+            $resp2 = $recaptcha->verify($request->request->get('g-recaptcha-response'), $request->getClientIp());
+            if ($resp2->isSuccess()) {
+                $em->persist($commentaire);
+                $em->flush();
 
-            $this->addFlash('success', 'Commentaire soumis, en attente de validation');
-            return $this->redirectToRoute('contact');
+                $this->addFlash('success', 'Commentaire soumis, en attente de validation');
+                return $this->redirectToRoute('liveagenda');
+            }
         }
         return $this->render('index/contact.html.twig', [
             'controller_name' => 'MainController',
             'livreDorPair' => $livreDorPair,
-            'livreDorImpair'=> $livreDorImpair,
+            'livreDorImpair' => $livreDorImpair,
             "formcom" => $formcom->createView(),
             "contactForm" => $form->createView()
 

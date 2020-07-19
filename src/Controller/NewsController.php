@@ -33,6 +33,7 @@ class NewsController extends AbstractController
         $music = $this->getDoctrine()->getRepository(Music::class)->LastMusic();
         $lastvideo = $this->getDoctrine()->getRepository(Video::class)->LastVideo();
         $nextconcert = $this->getDoctrine()->getRepository(Event::class)->Next3Concert();
+
         $nombreCom = array();
         for ($i = 0; $i < count($article); $i++){
             $count=count($commentaireRepository->findBy(array('Valide'=>1,'Article'=>$article[$i])));

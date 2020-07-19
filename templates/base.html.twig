@@ -12,6 +12,7 @@
                 document.getElementById("demo-form").submit();
             }
         </script>
+
         <!-- Document stylesheets
             ============================================= -->
         {% block stylesheets %}
@@ -27,7 +28,6 @@
             <link rel="stylesheet" href="{{ asset("css/responsive.css") }}" type="text/css"/>
             <link rel="stylesheet" href="{{ asset("kat-style.css") }}" type="text/css"/>
             <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
-            <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
         {% endblock %}
         <!-- Document Title
         ============================================= -->
@@ -103,7 +103,7 @@
 {% endblock %}
     {% for message in app.flashes('success') %}
         <div class="style-msg successmsg">
-            <div class="sb-msg"><i class="icon-thumbs-up"></i><strong>Super !</strong>{{message}}</div>
+            <div class="sb-msg"><i class="icon-thumbs-up"></i><strong>Super !  </strong>{{message}}</div>
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
         </div>
     {% endfor %}
